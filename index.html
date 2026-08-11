@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CitéPay — Dashboard Locataire</title>
+    <title>CitéPay — Espace Propriétaire</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -11,15 +11,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Mobile Top Navigation -->
     <nav class="site-nav">
         <button class="sidebar-toggle" aria-expanded="true">
             <span class="material-symbols-rounded">menu</span>
         </button>
         <span class="site-nav-title">CitéPay</span>
     </nav>
-
+   
     <div class="container">
-        <!-- Sidebar Navigation -->
+        <!-- Sidebar Navigation (Visible sur Desktop, Tablette et Mobile) -->
         <aside class="sidebar">
             <header class="sidebar-header">
                 <div class="header-logo-placeholder">
@@ -28,7 +29,7 @@
                 
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Locataire</span>
+                    <span class="profession">Espace Propriétaire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -50,16 +51,23 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="paiements.html" class="menu-link">
-                            <span class="material-symbols-rounded">payments</span>
-                            <span class="menu-label">Paiements</span>
+                        <a href="biens.html" class="menu-link">
+                            <span class="material-symbols-rounded">apartment</span>
+                            <span class="menu-label">Biens</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="documents.html" class="menu-link">
-                            <span class="material-symbols-rounded">description</span>
-                            <span class="menu-label">Documents</span>
+                        <a href="locataires.html" class="menu-link">
+                            <span class="material-symbols-rounded">group</span>
+                            <span class="menu-label">Locataires</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="finances.html" class="menu-link">
+                            <span class="material-symbols-rounded">account_balance</span>
+                            <span class="menu-label">Finances</span>
                         </a>
                     </li>
 
@@ -94,165 +102,143 @@
             <!-- Header Section -->
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Bonjour 👋, <span id="user-nom">…</span></h1>
-                    <p class="subtitle" id="user-residence">Chargement…</p>
+                    <h1 class="page-title">Bonjour 👋, Ismaël Ouattara</h1>
+                    <p class="subtitle">Portefeuille · 3 résidences</p>
                 </div>
                 <div class="user-profile-badge">
-                    <div class="user-avatar">--</div>
+                    <div class="user-avatar">IO</div>
                 </div>
             </header>
 
-            <!-- Cards Stats Grid -->
-            <section class="stats-grid">
+            <!-- Stats Grid / Aperçu Financier -->
+            <div class="stats-grid">
                 <div class="card stat-card">
-                    <div class="stat-icon bg-warning">
-                        <span class="material-symbols-rounded">schedule</span>
+                    <div class="stat-icon bg-success">
+                        <span class="material-symbols-rounded">payments</span>
                     </div>
                     <div class="stat-details">
-                        <span class="stat-title">Prochaine Échéance</span>
-                        <span class="stat-value" id="stat-echeance">…</span>
+                        <span class="stat-title">Encaissé ce mois</span>
+                        <span class="stat-value">2,14M <small>FCFA</small></span>
+                        <span class="stat-title text-success" style="font-size: 0.75rem; margin-top: 2px;">+12% vs juil.</span>
+                    </div>
+                </div>
+
+                <div class="card stat-card">
+                    <div class="stat-icon bg-warning">
+                        <span class="material-symbols-rounded">hourglass_top</span>
+                    </div>
+                    <div class="stat-details">
+                        <span class="stat-title">Loyers en attente</span>
+                        <span class="stat-value">340K <small>FCFA</small></span>
+                        <span class="stat-title" style="font-size: 0.75rem; margin-top: 2px;">3 locataires</span>
                     </div>
                 </div>
 
                 <div class="card stat-card">
                     <div class="stat-icon bg-accent">
-                        <span class="material-symbols-rounded">account_balance_wallet</span>
+                        <span class="material-symbols-rounded">pie_chart</span>
                     </div>
                     <div class="stat-details">
-                        <span class="stat-title">Montant du Loyer</span>
-                        <span class="stat-value" id="stat-loyer">…</span>
+                        <span class="stat-title">Taux d'occupation</span>
+                        <span class="stat-value">95% <small style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-placeholder);">18/20 unités</small></span>
                     </div>
                 </div>
+            </div>
 
-                <div class="card stat-card">
-                    <div class="stat-icon bg-success">
-                        <span class="material-symbols-rounded">check_circle</span>
-                    </div>
-                    <div class="stat-details">
-                        <span class="stat-title">Statut du Compte</span>
-                        <span class="stat-value" id="stat-statut">…</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Main Interactive Section -->
-            <section class="dashboard-grid">
-                <!-- Payment Banner -->
-                <div class="card payment-hero-card" id="hero-banniere">
-                    <div class="hero-content">
-                        <span class="badge-due">Loyer en attente</span>
-                        <h2>Montant dû : <span id="hero-montant-du">…</span></h2>
-                        <p>Échéance le <span id="hero-echeance">…</span></p>
-                        <button class="btn-primary">
-                            <span class="material-symbols-rounded">credit_card</span>
-                            Payer maintenant
+            <!-- Hero Card / Action Rapide Principale -->
+            <div class="dashboard-grid grid-single">
+                <div class="card payment-hero-card" style="padding: 24px;">
+                    <div style="position: relative; z-index: 2; width: 100%;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                            <span class="badge-due">Action groupée</span>
+                            <span class="material-symbols-rounded" style="color: #FBBF24;">campaign</span>
+                        </div>
+                        <h2>Relancez vos paiements en un clic</h2>
+                        <p>Envoyez des rappels automatiques de loyer par SMS ou notification aux locataires en retard.</p>
+                        <button class="btn-primary" style="background: #ffffff; color: var(--color-text-primary);">
+                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">send</span>
+                            Envoyer les rappels de loyer
                         </button>
                     </div>
                 </div>
+            </div>
 
-                <!-- Quick Actions Grid -->
-                <div class="card quick-actions-card">
-                    <h3>Accès rapides</h3>
-                    <div class="quick-grid">
-                        <a href="paiements.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">history</span></div>
-                            <span>Paiements</span>
-                        </a>
-                        <a href="documents.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">description</span></div>
-                            <span>Documents & Bail</span>
-                        </a>
-                        <a href="notifications.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">notifications</span></div>
-                            <span>Alertes</span>
-                        </a>
-                        <a href="parametres.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">settings</span></div>
-                            <span>Mon Profil</span>
-                        </a>
-                    </div>
+            <!-- Quick Actions -->
+            <div class="card quick-actions-card mb-large">
+                <h3>Accès rapide</h3>
+                <div class="quick-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <a href="locataires.html" class="quick-item">
+                        <span class="material-symbols-rounded quick-icon">group</span>
+                        <span>Mes Locataires</span>
+                        <small style="color: var(--color-text-placeholder); font-weight: normal;">18 actifs</small>
+                    </a>
+                    <a href="biens.html" class="quick-item">
+                        <span class="material-symbols-rounded quick-icon">apartment</span>
+                        <span>Baux</span>
+                        <small style="color: var(--color-text-placeholder); font-weight: normal;">3 à renouveler</small>
+                    </a>
+                    <a href="parametres.html" class="quick-item">
+                        <span class="material-symbols-rounded quick-icon">build</span>
+                        <span>Maintenance</span>
+                        <small style="color: var(--color-text-placeholder); font-weight: normal;">2 en cours</small>
+                    </a>
+                    <a href="finances.html" class="quick-item">
+                        <span class="material-symbols-rounded quick-icon">receipt_long</span>
+                        <span>Paiements</span>
+                        <small style="color: var(--color-text-placeholder); font-weight: normal;">Voir historique</small>
+                    </a>
                 </div>
-            </section>
+            </div>
 
-            <!-- Transactions and Documents Grid -->
-            <section class="content-grid">
-                <!-- Recent Transactions Table -->
-                <div class="card table-card">
+            <!-- Recent Activity Table -->
+            <div class="content-grid grid-single">
+                <div class="card">
                     <div class="card-header">
                         <h3>Activité récente</h3>
-                        <a href="paiements.html" class="link-more">Voir tout</a>
+                        <a href="finances.html" class="link-more">Tout voir</a>
                     </div>
                     <div class="table-responsive">
                         <table class="data-table">
                             <thead>
                                 <tr>
-                                    <th>Description</th>
-                                    <th>Date</th>
+                                    <th>Locataire</th>
+                                    <th>Bien / Résidence</th>
                                     <th>Montant</th>
                                     <th>Statut</th>
                                 </tr>
                             </thead>
-                            <tbody id="activite-recente-body">
+                            <tbody>
                                 <tr>
-                                    <td colspan="4">Chargement…</td>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-bg-secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.8rem;">AK</div>
+                                            <strong>Aicha Koné</strong>
+                                        </div>
+                                    </td>
+                                    <td>Résidence Koumassi · Apt 4B</td>
+                                    <td>150 000 FCFA</td>
+                                    <td><span class="status-badge paid">Payé</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div style="display: flex; align-items: center; gap: 10px;">
+                                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-bg-secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.8rem;">YB</div>
+                                            <strong>Yao Brou</strong>
+                                        </div>
+                                    </td>
+                                    <td>Résidence Cocody · Studio 2</td>
+                                    <td>95 000 FCFA</td>
+                                    <td><span class="status-badge pending">En attente</span></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-
-                <!-- Documents Section -->
-                <div class="card docs-card">
-                    <div class="card-header">
-                        <h3>Mes Documents</h3>
-                        <a href="documents.html" class="link-more">Tous</a>
-                    </div>
-                    <ul class="doc-list">
-                        <li class="doc-item">
-                            <div class="doc-info">
-                                <span class="material-symbols-rounded doc-icon">description</span>
-                                <div>
-                                    <span class="doc-title">Bail de résidence 2026</span>
-                                    <span class="doc-sub">Signé · PDF (1.2 Mo)</span>
-                                </div>
-                            </div>
-                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
-                        </li>
-                        <li class="doc-item">
-                            <div class="doc-info">
-                                <span class="material-symbols-rounded doc-icon">receipt_long</span>
-                                <div>
-                                    <span class="doc-title">Reçu — Juillet 2026</span>
-                                    <span class="doc-sub">295 000 FCFA · PDF</span>
-                                </div>
-                            </div>
-                            <a class="btn-icon" href="documents/recu-juillet-2026.pdf" download title="Télécharger">
-                                <span class="material-symbols-rounded">download</span>
-                            </a>
-                        </li>
-                        <li class="doc-item">
-                            <div class="doc-info">
-                                <span class="material-symbols-rounded doc-icon">verified</span>
-                                <div>
-                                    <span class="doc-title">Attestation de résidence</span>
-                                    <span class="doc-sub">Valide jusqu'au 30/06/2027</span>
-                                </div>
-                            </div>
-                            <a class="btn-icon" href="documents/attestation-residence.pdf" download title="Télécharger">
-                                <span class="material-symbols-rounded">download</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            </div>
         </main>
     </div>
 
-    <!-- Ordre important : mock-api → auth → dashboard → script (UI générique) -->
-    <script src="mock-api.js"></script>
-    <script src="auth.js"></script>
-    <script src="dashboard.js"></script>
-    <script src="interactions.js"></script>
+    <!-- Script JS Global -->
     <script src="script.js"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Mobile Top Navigation -->
     <nav class="site-nav">
         <button class="sidebar-toggle" aria-expanded="true">
             <span class="material-symbols-rounded">menu</span>
@@ -28,7 +29,7 @@
                 
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Locataire</span>
+                    <span class="profession">Espace Propriétaire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -36,11 +37,6 @@
             </header>
 
             <div class="sidebar-content">
-                <button class="theme-toggle theme-toggle-row" type="button">
-                    <span class="material-symbols-rounded">dark_mode</span>
-                    <span class="menu-label">Mode sombre</span>
-                </button>
-
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
                     <input type="search" placeholder="Rechercher..." required>
@@ -55,16 +51,23 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="paiements.html" class="menu-link">
-                            <span class="material-symbols-rounded">payments</span>
-                            <span class="menu-label">Paiements</span>
+                        <a href="biens.html" class="menu-link">
+                            <span class="material-symbols-rounded">apartment</span>
+                            <span class="menu-label">Biens</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
-                        <a href="documents.html" class="menu-link">
-                            <span class="material-symbols-rounded">description</span>
-                            <span class="menu-label">Documents</span>
+                        <a href="locataires.html" class="menu-link">
+                            <span class="material-symbols-rounded">group</span>
+                            <span class="menu-label">Locataires</span>
+                        </a>
+                    </li>
+
+                    <li class="menu-item">
+                        <a href="finances.html" class="menu-link">
+                            <span class="material-symbols-rounded">payments</span>
+                            <span class="menu-label">Finances</span>
                         </a>
                     </li>
 
@@ -103,7 +106,7 @@
                     <p class="subtitle">Centre de rappels, alertes et messages importants</p>
                 </div>
                 <div class="user-profile-badge">
-                    <div class="user-avatar">--</div>
+                    <div class="user-avatar">IO</div>
                 </div>
             </header>
 
@@ -118,67 +121,67 @@
             <!-- Liste des Notifications -->
             <div class="notification-list">
                 
-                <!-- Notification Non Lue : Appel de loyer -->
-                <div class="card notification-card unread" data-category="payment" data-status="unread">
-                    <div class="notification-icon icon-warning">
-                        <span class="material-symbols-rounded">pending_actions</span>
-                    </div>
-                    <div class="notification-content">
-                        <div class="notification-header">
-                            <span class="notification-title">Avis d'échéance — Août 2026</span>
-                            <span class="notification-time">Aujourd'hui, 09:00</span>
-                        </div>
-                        <p class="notification-body">Votre loyer du mois d'Août (295 000 FCFA) est disponible. La date limite d'échéance est fixée au 10 août 2026.</p>
-                        <div class="notification-actions">
-                            <a href="paiements.html" class="btn-primary btn-sm">Payer maintenant</a>
-                            <button class="btn-secondary btn-sm mark-read-btn">Marquer comme lue</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Notification Non Lue : Quittance -->
+                <!-- Notification Non Lue : Paiement reçu -->
                 <div class="card notification-card unread" data-category="payment" data-status="unread">
                     <div class="notification-icon icon-success">
                         <span class="material-symbols-rounded">check_circle</span>
                     </div>
                     <div class="notification-content">
                         <div class="notification-header">
-                            <span class="notification-title">Paiement confirmé & Quittance disponible</span>
-                            <span class="notification-time">02 juil. 2026</span>
+                            <span class="notification-title">Nouveau loyer perçu — Août 2026</span>
+                            <span class="notification-time">Aujourd'hui, 09:30</span>
                         </div>
-                        <p class="notification-body">Votre règlement de 295 000 FCFA par Wave a été validé. Votre quittance de loyer de Juillet 2026 est disponible au téléchargement.</p>
+                        <p class="notification-body">Le locataire de l'Appartement 3B (Résidence Les Palmiers) a réglé son loyer de 295 000 FCFA avec succès.</p>
                         <div class="notification-actions">
-                            <a href="documents.html" class="btn-secondary btn-sm">Voir le document</a>
+                            <a href="finances.html" class="btn-primary btn-sm">Voir les finances</a>
                             <button class="btn-secondary btn-sm mark-read-btn">Marquer comme lue</button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Notification Lue : Travaux / Info -->
+                <!-- Notification Non Lue : Retard de loyer -->
+                <div class="card notification-card unread" data-category="payment" data-status="unread">
+                    <div class="notification-icon icon-warning">
+                        <span class="material-symbols-rounded">pending_actions</span>
+                    </div>
+                    <div class="notification-content">
+                        <div class="notification-header">
+                            <span class="notification-title">Retard de paiement détecté</span>
+                            <span class="notification-time">Hier, 18:00</span>
+                        </div>
+                        <p class="notification-body">L'échéance de loyer pour le Studio 12 (Immeuble Tropicana) est dépassée. Un rappel automatique a été envoyé au locataire.</p>
+                        <div class="notification-actions">
+                            <a href="biens.html" class="btn-secondary btn-sm">Gérer le bien</a>
+                            <button class="btn-secondary btn-sm mark-read-btn">Marquer comme lue</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notification Lue : Maintenance / Signalement -->
                 <div class="card notification-card" data-category="info" data-status="read">
                     <div class="notification-icon icon-info">
                         <span class="material-symbols-rounded">info</span>
                     </div>
                     <div class="notification-content">
                         <div class="notification-header">
-                            <span class="notification-title">Maintenance préventive — Ascenseur</span>
-                            <span class="notification-time">25 juin 2026</span>
+                            <span class="notification-title">Signalement incident — Plomberie</span>
+                            <span class="notification-time">04 août 2026</span>
                         </div>
-                        <p class="notification-body">Une intervention technique de routine aura lieu sur l'ascenseur principal le 28 juin entre 09h00 et 12h00.</p>
+                        <p class="notification-body">Un locataire de la Villa Oasis a signalé une fuite mineure au niveau de la cuisine. Intervention planifiée.</p>
                     </div>
                 </div>
 
-                <!-- Notification Lue : Contrat -->
+                <!-- Notification Lue : Fin de bail proche -->
                 <div class="card notification-card" data-category="info" data-status="read">
                     <div class="notification-icon icon-info">
                         <span class="material-symbols-rounded">verified</span>
                     </div>
                     <div class="notification-content">
                         <div class="notification-header">
-                            <span class="notification-title">Mise à jour des documents d'accueil</span>
-                            <span class="notification-time">10 févr. 2026</span>
+                            <span class="notification-title">Échéance de bail à venir</span>
+                            <span class="notification-time">28 juil. 2026</span>
                         </div>
-                        <p class="notification-body">Votre attestation de résidence pour l'année 2026 a été ajoutée à votre coffre-fort de documents.</p>
+                        <p class="notification-body">Le contrat de location pour le Local Commercial 02 arrive à échéance dans 60 jours. Pensez à contacter le locataire.</p>
                     </div>
                 </div>
 
@@ -186,15 +189,7 @@
         </main>
     </div>
 
-    <script src="mock-api.js"></script>
-    <script src="auth.js"></script>
-    <script src="page-protegee.js"></script>
-    <script src="modal.js"></script>
-    <script src="validation-formulaire.js"></script>
-    <script src="dark-mode.js"></script>
-    <script src="scroll-reveal.js"></script>
-    <script src="recherche-globale.js"></script>
-    <script src="interactions.js"></script>
     <script src="script.js"></script>
+    <script src="translation.js"></script>
 </body>
 </html>
