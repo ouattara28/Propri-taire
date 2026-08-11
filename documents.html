@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CitéPay — Dashboard Locataire</title>
+    <title>CitéPay — Documents</title>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
     </nav>
 
     <div class="container">
-        <!-- Sidebar Navigation -->
+        <!-- Navigation Sidebar -->
         <aside class="sidebar">
             <header class="sidebar-header">
                 <div class="header-logo-placeholder">
@@ -36,6 +36,11 @@
             </header>
 
             <div class="sidebar-content">
+                <button class="theme-toggle theme-toggle-row" type="button">
+                    <span class="material-symbols-rounded">dark_mode</span>
+                    <span class="menu-label">Mode sombre</span>
+                </button>
+
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
                     <input type="search" placeholder="Rechercher..." required>
@@ -43,7 +48,7 @@
 
                 <ul class="menu-list">
                     <li class="menu-item">
-                        <a href="index.html" class="menu-link active">
+                        <a href="index.html" class="menu-link">
                             <span class="material-symbols-rounded">home</span>
                             <span class="menu-label">Accueil</span>
                         </a>
@@ -57,7 +62,7 @@
                     </li>
 
                     <li class="menu-item">
-                        <a href="documents.html" class="menu-link">
+                        <a href="documents.html" class="menu-link active">
                             <span class="material-symbols-rounded">description</span>
                             <span class="menu-label">Documents</span>
                         </a>
@@ -89,141 +94,67 @@
             </div>
         </aside>
 
-        <!-- Main Dashboard Content -->
+        <!-- Main Content -->
         <main class="main-content">
             <!-- Header Section -->
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Bonjour 👋, <span id="user-nom">…</span></h1>
-                    <p class="subtitle" id="user-residence">Chargement…</p>
+                    <h1 class="page-title">Documents</h1>
+                    <p class="subtitle">Votre bail, reçus et attestations, toujours accessibles</p>
                 </div>
                 <div class="user-profile-badge">
                     <div class="user-avatar">--</div>
                 </div>
             </header>
 
-            <!-- Cards Stats Grid -->
-            <section class="stats-grid">
-                <div class="card stat-card">
-                    <div class="stat-icon bg-warning">
-                        <span class="material-symbols-rounded">schedule</span>
-                    </div>
-                    <div class="stat-details">
-                        <span class="stat-title">Prochaine Échéance</span>
-                        <span class="stat-value" id="stat-echeance">…</span>
-                    </div>
-                </div>
+            <!-- Filtres -->
+            <div class="filter-row">
+                <button class="filter-chip active" data-filter="all">Tous</button>
+                <button class="filter-chip" data-filter="bail">Bail</button>
+                <button class="filter-chip" data-filter="recu">Reçus</button>
+                <button class="filter-chip" data-filter="attestation">Attestations</button>
+            </div>
 
-                <div class="card stat-card">
-                    <div class="stat-icon bg-accent">
-                        <span class="material-symbols-rounded">account_balance_wallet</span>
-                    </div>
-                    <div class="stat-details">
-                        <span class="stat-title">Montant du Loyer</span>
-                        <span class="stat-value" id="stat-loyer">…</span>
-                    </div>
-                </div>
-
-                <div class="card stat-card">
-                    <div class="stat-icon bg-success">
-                        <span class="material-symbols-rounded">check_circle</span>
-                    </div>
-                    <div class="stat-details">
-                        <span class="stat-title">Statut du Compte</span>
-                        <span class="stat-value" id="stat-statut">…</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Main Interactive Section -->
-            <section class="dashboard-grid">
-                <!-- Payment Banner -->
-                <div class="card payment-hero-card" id="hero-banniere">
-                    <div class="hero-content">
-                        <span class="badge-due">Loyer en attente</span>
-                        <h2>Montant dû : <span id="hero-montant-du">…</span></h2>
-                        <p>Échéance le <span id="hero-echeance">…</span></p>
-                        <button class="btn-primary">
-                            <span class="material-symbols-rounded">credit_card</span>
-                            Payer maintenant
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Quick Actions Grid -->
-                <div class="card quick-actions-card">
-                    <h3>Accès rapides</h3>
-                    <div class="quick-grid">
-                        <a href="paiements.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">history</span></div>
-                            <span>Paiements</span>
-                        </a>
-                        <a href="documents.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">description</span></div>
-                            <span>Documents & Bail</span>
-                        </a>
-                        <a href="notifications.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">notifications</span></div>
-                            <span>Alertes</span>
-                        </a>
-                        <a href="parametres.html" class="quick-item">
-                            <div class="quick-icon"><span class="material-symbols-rounded">settings</span></div>
-                            <span>Mon Profil</span>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Transactions and Documents Grid -->
-            <section class="content-grid">
-                <!-- Recent Transactions Table -->
-                <div class="card table-card">
-                    <div class="card-header">
-                        <h3>Activité récente</h3>
-                        <a href="paiements.html" class="link-more">Voir tout</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th>Description</th>
-                                    <th>Date</th>
-                                    <th>Montant</th>
-                                    <th>Statut</th>
-                                </tr>
-                            </thead>
-                            <tbody id="activite-recente-body">
-                                <tr>
-                                    <td colspan="4">Chargement…</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-                <!-- Documents Section -->
-                <div class="card docs-card">
-                    <div class="card-header">
-                        <h3>Mes Documents</h3>
-                        <a href="documents.html" class="link-more">Tous</a>
-                    </div>
+            <!-- Section Bail -->
+            <div class="document-section" data-section-type="bail">
+                <h2 class="section-header-title">Contrat de bail</h2>
+                <div class="card mb-large">
                     <ul class="doc-list">
                         <li class="doc-item">
                             <div class="doc-info">
                                 <span class="material-symbols-rounded doc-icon">description</span>
                                 <div>
                                     <span class="doc-title">Bail de résidence 2026</span>
-                                    <span class="doc-sub">Signé · PDF (1.2 Mo)</span>
+                                    <span class="doc-sub">Signé le 15 janvier 2026 · PDF (1.2 Mo)</span>
                                 </div>
                             </div>
                             <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
                         </li>
                         <li class="doc-item">
                             <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">description</span>
+                                <div>
+                                    <span class="doc-title">Avenant — Révision de loyer 2026</span>
+                                    <span class="doc-sub">Signé le 02 janvier 2026 · PDF (340 Ko)</span>
+                                </div>
+                            </div>
+                            <button class="btn-icon"><span class="material-symbols-rounded">download</span></button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section Reçus -->
+            <div class="document-section" data-section-type="recu">
+                <h2 class="section-header-title">Reçus de paiement</h2>
+                <div class="card mb-large">
+                    <ul class="doc-list">
+                        <li class="doc-item">
+                            <div class="doc-info">
                                 <span class="material-symbols-rounded doc-icon">receipt_long</span>
                                 <div>
                                     <span class="doc-title">Reçu — Juillet 2026</span>
-                                    <span class="doc-sub">295 000 FCFA · PDF</span>
+                                    <span class="doc-sub">295 000 FCFA · Wave · PDF</span>
                                 </div>
                             </div>
                             <a class="btn-icon" href="documents/recu-juillet-2026.pdf" download title="Télécharger">
@@ -232,10 +163,43 @@
                         </li>
                         <li class="doc-item">
                             <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">receipt_long</span>
+                                <div>
+                                    <span class="doc-title">Reçu — Juin 2026</span>
+                                    <span class="doc-sub">295 000 FCFA · Orange Money · PDF</span>
+                                </div>
+                            </div>
+                            <a class="btn-icon" href="documents/recu-juin-2026.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
+                        </li>
+                        <li class="doc-item">
+                            <div class="doc-info">
+                                <span class="material-symbols-rounded doc-icon">receipt_long</span>
+                                <div>
+                                    <span class="doc-title">Reçu — Mai 2026</span>
+                                    <span class="doc-sub">295 000 FCFA · Wave · PDF</span>
+                                </div>
+                            </div>
+                            <a class="btn-icon" href="documents/recu-mai-2026.pdf" download title="Télécharger">
+                                <span class="material-symbols-rounded">download</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section Attestations -->
+            <div class="document-section" data-section-type="attestation">
+                <h2 class="section-header-title">Attestations</h2>
+                <div class="card">
+                    <ul class="doc-list">
+                        <li class="doc-item">
+                            <div class="doc-info">
                                 <span class="material-symbols-rounded doc-icon">verified</span>
                                 <div>
                                     <span class="doc-title">Attestation de résidence</span>
-                                    <span class="doc-sub">Valide jusqu'au 30/06/2027</span>
+                                    <span class="doc-sub">Valide jusqu'au 30/06/2027 · PDF</span>
                                 </div>
                             </div>
                             <a class="btn-icon" href="documents/attestation-residence.pdf" download title="Télécharger">
@@ -244,14 +208,18 @@
                         </li>
                     </ul>
                 </div>
-            </section>
+            </div>
         </main>
     </div>
 
-    <!-- Ordre important : mock-api → auth → dashboard → script (UI générique) -->
     <script src="mock-api.js"></script>
     <script src="auth.js"></script>
-    <script src="dashboard.js"></script>
+    <script src="page-protegee.js"></script>
+    <script src="modal.js"></script>
+    <script src="validation-formulaire.js"></script>
+    <script src="dark-mode.js"></script>
+    <script src="scroll-reveal.js"></script>
+    <script src="recherche-globale.js"></script>
     <script src="interactions.js"></script>
     <script src="script.js"></script>
 </body>
