@@ -1,4 +1,4 @@
-/* ==========================================================================
+/* ================= =========================================================
    FICHIER STYLE.CSS — APPLICATION CITÉPAY
    --------------------------------------------------------------------------
    Pages rattachées à ce fichier :
@@ -214,8 +214,12 @@ h1, h2, h3, .name, .page-title, .site-nav-title, .logout-title, .auth-title {
     white-space: nowrap;
     padding: 12px 15px;
     border-radius: 8px;
-    transition: all 0.3s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
     font-weight: 500;
+}
+
+.menu-link:active {
+    transform: scale(0.96);
 }
 
 .sidebar.collapsed .menu-label {
@@ -1132,7 +1136,7 @@ h1, h2, h3, .name, .page-title, .site-nav-title, .logout-title, .auth-title {
     text-decoration: underline;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= MOBILE RESPONSIVE & NAVIGATION ================= */
 .site-nav {
     position: sticky;
     display: none;
@@ -1143,6 +1147,7 @@ h1, h2, h3, .name, .page-title, .site-nav-title, .logout-title, .auth-title {
     z-index: 1000;
     align-items: center;
     gap: 15px;
+    transition: transform 0.3s ease;
 }
 
 .site-nav-title {
@@ -1154,48 +1159,300 @@ h1, h2, h3, .name, .page-title, .site-nav-title, .logout-title, .auth-title {
     position: static;
 }
 
+/* En grands écrans Desktop (au-dessus de 768px), la sidebar reste verticale sur le côté gauche */
+@media (min-width: 769px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .sidebar {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 300px;
+    }
+
+    /* Masquer le bouton flèche/chevron de la sidebar en mode normal */
+    .sidebar-header .sidebar-toggle {
+        display: none !important;
+    }
+}
+
 @media (max-width: 992px) {
     .dashboard-grid, .content-grid {
         grid-template-columns: 1fr;
     }
 }
 
+/* Mode Mobile & Tablette : Liquid Navigation Bar */
 @media (max-width: 768px) {
-    body::before {
-        content: '';
-        position: fixed;
-        inset: 0;
-        z-index: 90;
-        opacity: 0;
-        pointer-events: none;
-        background: rgba(15, 23, 42, 0.5);
-        transition: 0.4s ease;
-    }
-
-    body:has(.sidebar:not(.collapsed))::before {
-        pointer-events: auto;
-        opacity: 1;
+    .container {
+        flex-direction: column;
     }
 
     .site-nav {
-        display: flex;
+        display: none !important;
     }
 
+    /* Conteneur principal de la barre flottante */
     .sidebar {
-        position: fixed;
-        left: 0;
-        width: 270px;
-        height: 100%;
-        transition: left 0.4s ease;
+        position: fixed !important;
+        bottom: 20px !important;
+        top: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 380px !important;
+        max-width: 92% !important;
+        height: 70px !important;
+        background: #0f172a !important; /* Anthracite sombre */
+        border-radius: 16px !important;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.25) !important;
+        z-index: 8000 !important;
+        padding: 0 !important;
+        border: none !important;
+        overflow: visible !important; /* Permet à la bulle de sortir vers le haut */
     }
 
-    .sidebar.collapsed {
-        left: -270px;
-        width: 270px;
+    .sidebar-header, 
+    .sidebar-content .search-form, 
+    .bottom-content {
+        display: none !important;
+    }
+
+    .sidebar-content {
+        height: 100%;
+        width: 100%;
+        padding: 0 !important;
+    }
+
+    .sidebar-content .menu-list {
+        position: relative;
+        display: flex !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        flex-direction: row !important;
+    }
+
+    .menu-item {
+        position: relative;
+        list-style: none;
+        width: 20%; /* 5 éléments = 20% chacun */
+        height: 70px;
+        z-index: 1;
+    }
+
+    .menu-link {
+        position: relative;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        text-align: center;
+        background: transparent !important;
+        text-decoration: none;
+    }
+
+    .menu-link .icon {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        color: #ffffff;
+    }
+
+    .menu-link .icon span {
+        font-size: 1.5rem;
+    }
+
+    /* Élévation de l'icône sélectionnée dans la bulle blanche */
+    .menu-item.active .menu-link .icon {
+        transform: translateY(-32px);
+        color: #0f172a !important;
+        z-index: 10;
+    }
+
+    /* Animation de l'étiquette sous l'icône */
+    .menu-label {
+        position: absolute;
+        color: #ffffff;
+        font-size: 0.7rem !important;
+        font-weight: 500;
+        transition: 0.5s ease;
+        opacity: 0;
+        transform: translateY(20px);
+        display: block !important;
+    }
+
+    .menu-item.active .menu-label {
+        opacity: 1;
+        transform: translateY(16px);
+    }
+
+    /* ================= LA BULLE BLANCHE & VAGUES ================= */
+    .indicator {
+        position: absolute;
+        top: -50%;
+        width: 62px;
+        height: 62px;
+        background: #ffffff;
+        border-radius: 50%;
+        border: 6px solid var(--color-bg-primary); /* S'associe parfaitement au fond de la page */
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Découpe de la vague gauche */
+    .indicator::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -22px;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-top-right-radius: 20px;
+        box-shadow: 1px -10px 0 0 var(--color-bg-primary);
+    }
+
+    /* Découpe de la vague droite */
+    .indicator::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -22px;
+        width: 20px;
+        height: 20px;
+        background: transparent;
+        border-top-left-radius: 20px;
+        box-shadow: -1px -10px 0 0 var(--color-bg-primary);
+    }
+
+    /* Déplacement dynamique de la bulle selon l’onglet actif */
+    .menu-item:nth-child(1).active ~ .indicator { transform: translateX(calc(70px * 0 + 6px)); }
+    .menu-item:nth-child(2).active ~ .indicator { transform: translateX(calc(70px * 1 + 6px)); }
+    .menu-item:nth-child(3).active ~ .indicator { transform: translateX(calc(70px * 2 + 6px)); }
+    .menu-item:nth-child(4).active ~ .indicator { transform: translateX(calc(70px * 3 + 6px)); }
+    .menu-item:nth-child(5).active ~ .indicator { transform: translateX(calc(70px * 4 + 6px)); }
+
+    .main-content {
+        padding: 20px;
+        margin-bottom: 100px !important;
+    }
+}
+
+    /* Barre de Navigation Mobile Flottante Style "Pill / Floating" */
+    .sidebar {
+        position: fixed !important;
+        bottom: 15px !important;
+        top: auto !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: min(400px, 92%) !important;
+        height: 70px !important;
+        background: var(--color-bg-sidebar) !important;
+        border-radius: 16px !important;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15) !important;
+        border: 1px solid var(--color-border-hr) !important;
+        z-index: 8000 !important;
+        padding: 0 10px !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    .sidebar-header, 
+    .sidebar-content .search-form, 
+    .bottom-content {
+        display: none !important;
+    }
+
+    .sidebar-content {
+        height: 100%;
+        width: 100%;
+        padding: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .sidebar-content .menu-list {
+        display: flex !important;
+        justify-content: space-around !important;
+        align-items: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        list-style: none !important;
+        flex-direction: row !important;
+        gap: 4px !important;
+    }
+
+    .menu-item { 
+        margin: 0;
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+
+    /* ================= EFFET & ANIMATION NAV MOBILE ================= */
+    .menu-link {
+        position: relative;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 3px !important;
+        padding: 8px 12px !important;
+        font-size: 0.72rem !important;
+        border-radius: 12px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        color: var(--color-text-placeholder) !important;
+        background: transparent !important;
+        text-decoration: none;
+        width: 100%;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    }
+
+    /* Transition sur les icônes */
+    .menu-link span.material-symbols-rounded {
+        font-size: 1.35rem;
+        transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease;
+    }
+
+    /* Effet tactile dynamique lors de la pression */
+    .menu-link:active {
+        transform: scale(0.90) !important;
+    }
+
+    /* Élément sélectionné (Active State) */
+    .menu-link.active, 
+    .menu-link:hover {
+        background: var(--primary-light) !important;
+        color: var(--color-hover-primary) !important;
+    }
+
+    /* Surélévation douce de l'icône active */
+    .menu-link.active span.material-symbols-rounded {
+        transform: translateY(-2px) scale(1.12);
+        color: var(--color-hover-primary);
+    }
+
+    .menu-label {
+        display: block !important;
+        font-size: 0.7rem;
+        font-weight: 500;
     }
 
     .main-content {
         padding: 20px;
+        margin-bottom: 95px !important; /* Dégagement suffisant pour la barre flottante */
     }
 }
 
@@ -1214,5 +1471,197 @@ h1, h2, h3, .name, .page-title, .site-nav-title, .logout-title, .auth-title {
     .notification-actions {
         width: 100%;
         justify-content: flex-end;
+    }
+}
+
+/* ================= TOAST NOTIFICATIONS ================= */
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none;
+}
+
+.toast {
+    pointer-events: auto;
+    min-width: 280px;
+    max-width: 380px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.15), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 4px solid var(--primary, #3B82F6);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast-enter {
+    opacity: 0;
+    transform: translateX(50px) scale(0.95);
+}
+
+.toast-visible {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+.toast-exit {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.9);
+}
+
+.toast-success { border-left-color: #10B981; }
+.toast-success .toast-icon { color: #10B981; }
+
+.toast-warning { border-left-color: #F59E0B; }
+.toast-warning .toast-icon { color: #F59E0B; }
+
+.toast-danger { border-left-color: #EF4444; }
+.toast-danger .toast-icon { color: #EF4444; }
+
+.toast-info { border-left-color: #3B82F6; }
+.toast-info .toast-icon { color: #3B82F6; }
+
+.toast-message {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #1F2937;
+    flex: 1;
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #9CA3AF;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+}
+.toast-close:hover { color: #1F2937; }
+
+/* ================= MODALES INTERACTIVES ================= */
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(4px);
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.active { opacity: 1; }
+
+.modal-card {
+    background: #ffffff;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+    transform: translateY(20px) scale(0.98);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow: hidden;
+}
+
+.modal-backdrop.active .modal-card {
+    transform: translateY(0) scale(1);
+}
+
+.modal-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--color-border-hr, #E5E7EB);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 { font-size: 1.1rem; margin: 0; font-weight: 600; }
+
+.modal-close-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6B7280;
+}
+
+.modal-body { padding: 20px; }
+
+.modal-footer {
+    padding: 12px 20px;
+    background: #F9FAFB;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+/* ================= EFFETS DE CHARGEMENT (SKELETON & SPINNER) ================= */
+.skeleton-active {
+    position: relative;
+    overflow: hidden;
+}
+
+.skeleton-active::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background-image: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0,
+        rgba(255, 255, 255, 0.4) 20%,
+        rgba(255, 255, 255, 0.6) 60%,
+        rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 1.2s infinite;
+}
+
+@keyframes shimmer {
+    100% { transform: translateX(100%); }
+}
+
+.spin {
+    animation: spin 1s linear infinite;
+}
+@keyframes spin { 100% { transform: rotate(360deg); } }
+
+/* ================= ANIMATIONS DE TRANSITION DE PAGE ================= */
+.page-enter {
+    animation: fadeInUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.page-exit {
+    animation: fadeOutDown 0.25s cubic-bezier(0.7, 0, 0.84, 0) forwards !important;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-12px);
     }
 }
