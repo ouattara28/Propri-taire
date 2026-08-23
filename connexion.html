@@ -19,8 +19,8 @@
                 <div class="auth-logo">
                     <span class="material-symbols-rounded">lock</span>
                 </div>
-                <h1 class="auth-title">Bienvenue !</h1>
-                <p class="auth-subtitle">Veuillez saisir vos identifiants pour accéder à votre espace</p>
+                <h1 class="auth-title" data-i18n="auth_welcome_title">Bienvenue !</h1>
+                <p class="auth-subtitle" data-i18n="auth_login_subtitle">Veuillez saisir vos identifiants pour accéder à votre espace</p>
             </div>
 
             <!-- Formulaire de connexion -->
@@ -28,7 +28,7 @@
                 
                 <!-- Champ Adresse Email -->
                 <div class="form-group">
-                    <label for="email" class="form-label">Adresse e-mail</label>
+                    <label for="email" class="form-label" data-i18n="label_email_auth">Adresse e-mail</label>
                     <div class="input-wrapper">
                         <span class="material-symbols-rounded input-icon">mail</span>
                         <input 
@@ -45,7 +45,7 @@
 
                 <!-- Champ Mot de passe -->
                 <div class="form-group">
-                    <label for="password" class="form-label">Mot de passe</label>
+                    <label for="password" class="form-label" data-i18n="label_password_auth">Mot de passe</label>
                     <div class="input-wrapper">
                         <span class="material-symbols-rounded input-icon">lock</span>
                         <input 
@@ -67,14 +67,14 @@
                 <div class="form-options">
                     <label class="remember-me">
                         <input type="checkbox" id="rememberMe" name="rememberMe">
-                        <span>Se souvenir de moi</span>
+                        <span data-i18n="remember_me">Se souvenir de moi</span>
                     </label>
-                    <a href="#" class="forgot-link">Mot de passe oublié ?</a>
+                    <a href="#" class="forgot-link" data-i18n="forgot_password">Mot de passe oublié ?</a>
                 </div>
 
                 <!-- Bouton de soumission -->
                 <button type="submit" class="btn-primary btn-submit" id="submitBtn">
-                    <span>Se connecter</span>
+                    <span data-i18n="btn_login">Se connecter</span>
                     <span class="material-symbols-rounded">arrow_forward</span>
                 </button>
 
@@ -82,14 +82,14 @@
 
             <!-- Pied de page / Inscription -->
             <div class="auth-footer">
-                Vous n'avez pas encore de compte ? <a href="inscription.html">Créer un compte</a>
+                <span data-i18n="auth_no_account">Vous n'avez pas encore de compte ?</span> <a href="inscription.html" data-i18n="auth_create_account">Créer un compte</a>
             </div>
 
         </div>
     </div>
 
     <!-- Le fichier JS qui sera géré par Ismael pour le fonctionnement du formulaire s -->
-    <script src="script.js"></script>
     <script src="translation.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

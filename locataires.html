@@ -29,7 +29,7 @@
                 
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Propriétaire</span>
+                    <span class="profession" data-i18n="profession_owner">Espace Propriétaire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -39,49 +39,49 @@
             <div class="sidebar-content">
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
-                    <input type="search" placeholder="Rechercher..." required>
+                    <input type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher..." required>
                 </form>
 
                 <ul class="menu-list">
                     <li class="menu-item">
                         <a href="index.html" class="menu-link">
                             <span class="material-symbols-rounded">home</span>
-                            <span class="menu-label">Accueil</span>
+                            <span class="menu-label" data-i18n="nav_home">Accueil</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="biens.html" class="menu-link">
                             <span class="material-symbols-rounded">apartment</span>
-                            <span class="menu-label">Biens</span>
+                            <span class="menu-label" data-i18n="nav_properties">Biens</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="locataires.html" class="menu-link active">
                             <span class="material-symbols-rounded">group</span>
-                            <span class="menu-label">Locataires</span>
+                            <span class="menu-label" data-i18n="nav_tenants">Locataires</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="finances.html" class="menu-link">
                             <span class="material-symbols-rounded">account_balance</span>
-                            <span class="menu-label">Finances</span>
+                            <span class="menu-label" data-i18n="nav_finances">Finances</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="notifications.html" class="menu-link">
                             <span class="material-symbols-rounded">notifications</span>
-                            <span class="menu-label">Notifications</span>
+                            <span class="menu-label" data-i18n="nav_notifications">Notifications</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="parametres.html" class="menu-link">
                             <span class="material-symbols-rounded">settings</span>
-                            <span class="menu-label">Paramètres</span>
+                            <span class="menu-label" data-i18n="nav_settings">Paramètres</span>
                         </a>
                     </li>
                 </ul>
@@ -92,7 +92,7 @@
                     <li class="menu-item">
                         <a href="deconnexion.html" class="menu-link">
                             <span class="material-symbols-rounded">logout</span>
-                            <span class="menu-label">Déconnexion</span>
+                            <span class="menu-label" data-i18n="nav_logout">Déconnexion</span>
                         </a>
                     </li>
                 </ul>
@@ -104,12 +104,12 @@
             <!-- Header Section -->
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Mes Locataires</h1>
-                    <p class="subtitle">Gestion et suivi de vos locataires actifs</p>
+                    <h1 class="page-title" data-i18n="page_title_tenants">Mes Locataires</h1>
+                    <p class="subtitle" data-i18n="subtitle_tenants">Gestion et suivi de vos locataires actifs</p>
                 </div>
                 <button class="btn-primary" style="display: flex; align-items: center; gap: 8px;">
                     <span class="material-symbols-rounded">person_add</span>
-                    Ajouter un locataire
+                    <span data-i18n="btn_add_tenant">Ajouter un locataire</span>
                 </button>
             </header>
 
@@ -117,19 +117,19 @@
             <div class="content-grid grid-single">
                 <div class="card">
                     <div class="card-header">
-                        <h3>Annuaire des locataires</h3>
+                        <h3 data-i18n="directory_title">Annuaire des locataires</h3>
                         <span style="font-size: 0.85rem; color: var(--color-text-placeholder);">18 actifs sur 20 unités</span>
                     </div>
                     <div class="table-responsive">
                         <table class="data-table">
                             <thead>
                                 <tr>
-                                    <th>Locataire</th>
-                                    <th>Contact</th>
-                                    <th>Bien assigné</th>
-                                    <th>Loyer mensuel</th>
-                                    <th>Statut bail</th>
-                                    <th>Actions</th>
+                                    <th data-i18n="th_tenant">Locataire</th>
+                                    <th data-i18n="th_contact">Contact</th>
+                                    <th data-i18n="th_assigned_property">Bien assigné</th>
+                                    <th data-i18n="th_monthly_rent">Loyer mensuel</th>
+                                    <th data-i18n="th_lease_status">Statut bail</th>
+                                    <th data-i18n="th_actions">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -143,9 +143,9 @@
                                     <td>+225 07 00 00 00</td>
                                     <td>Résidence Koumassi · Apt 4B</td>
                                     <td>150 000 FCFA</td>
-                                    <td><span class="status-badge paid">À jour</span></td>
+                                    <td><span class="status-badge paid" data-i18n="status_uptodate">À jour</span></td>
                                     <td>
-                                        <a href="#" class="link-more" style="font-size: 0.85rem;">Détails</a>
+                                        <a href="#" class="link-more" style="font-size: 0.85rem;" data-i18n="details_link">Détails</a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -160,7 +160,7 @@
                                     <td>95 000 FCFA</td>
                                     <td><span class="status-badge pending">En attente</span></td>
                                     <td>
-                                        <a href="#" class="link-more" style="font-size: 0.85rem;">Détails</a>
+                                        <a href="#" class="link-more" style="font-size: 0.85rem;" data-i18n="details_link">Détails</a>
                                     </td>
                                 </tr>
                             </tbody>
@@ -172,7 +172,7 @@
     </div>
 
     <!-- Script JS Global -->
-    <script src="script.js"></script>
     <script src="translation.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

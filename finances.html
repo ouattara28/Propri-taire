@@ -25,7 +25,7 @@
                 </div>
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Propriétaire</span>
+                    <span class="profession" data-i18n="profession_owner">Espace Propriétaire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -35,49 +35,49 @@
             <div class="sidebar-content">
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
-                    <input type="search" placeholder="Rechercher..." required>
+                    <input type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher..." required>
                 </form>
 
                 <ul class="menu-list">
                     <li class="menu-item">
                         <a href="index.html" class="menu-link">
                             <span class="material-symbols-rounded">home</span>
-                            <span class="menu-label">Accueil</span>
+                            <span class="menu-label" data-i18n="nav_home">Accueil</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="biens.html" class="menu-link">
                             <span class="material-symbols-rounded">apartment</span>
-                            <span class="menu-label">Biens</span>
+                            <span class="menu-label" data-i18n="nav_properties">Biens</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="locataires.html" class="menu-link">
                             <span class="material-symbols-rounded">group</span>
-                            <span class="menu-label">Locataires</span>
+                            <span class="menu-label" data-i18n="nav_tenants">Locataires</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="finances.html" class="menu-link active">
                             <span class="material-symbols-rounded">account_balance</span>
-                            <span class="menu-label">Finances</span>
+                            <span class="menu-label" data-i18n="nav_finances">Finances</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="notifications.html" class="menu-link">
                             <span class="material-symbols-rounded">notifications</span>
-                            <span class="menu-label">Notifications</span>
+                            <span class="menu-label" data-i18n="nav_notifications">Notifications</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="parametres.html" class="menu-link">
                             <span class="material-symbols-rounded">settings</span>
-                            <span class="menu-label">Paramètres</span>
+                            <span class="menu-label" data-i18n="nav_settings">Paramètres</span>
                         </a>
                     </li>
 
@@ -88,7 +88,7 @@
                 <li class="menu-item">
                     <a href="deconnexion.html" class="menu-link">
                         <span class="material-symbols-rounded">logout</span>
-                        <span class="menu-label">Déconnexion</span>
+                        <span class="menu-label" data-i18n="nav_logout">Déconnexion</span>
                     </a>
                 </li>
             </div>
@@ -97,8 +97,8 @@
         <main class="main-content">
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Finances</h1>
-                    <p class="subtitle">Vue d'ensemble et transactions</p>
+                    <h1 class="page-title" data-i18n="page_title_finances">Finances</h1>
+                    <p class="subtitle" data-i18n="subtitle_finances">Vue d'ensemble et transactions</p>
                 </div>
                 <div class="user-profile-badge">
                     <div class="user-avatar">IO</div>
@@ -112,7 +112,7 @@
                         <span class="material-symbols-rounded">check_circle</span>
                     </div>
                     <div class="stat-details">
-                        <span class="stat-title">Payé</span>
+                        <span class="stat-title" data-i18n="stat_paid">Payé</span>
                         <span class="stat-value">1,8M <small>FCFA</small></span>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
                         <span class="material-symbols-rounded">schedule</span>
                     </div>
                     <div class="stat-details">
-                        <span class="stat-title">En attente</span>
+                        <span class="stat-title" data-i18n="stat_pending">En attente</span>
                         <span class="stat-value">340K <small>FCFA</small></span>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                         <span class="material-symbols-rounded">error</span>
                     </div>
                     <div class="stat-details">
-                        <span class="stat-title">En retard</span>
+                        <span class="stat-title" data-i18n="stat_late">En retard</span>
                         <span class="stat-value">150K <small>FCFA</small></span>
                     </div>
                 </div>
@@ -143,21 +143,21 @@
                         <span class="material-symbols-rounded">event</span>
                     </div>
                     <div>
-                        <strong class="next-payment-title">Prochain versement</strong>
+                        <strong class="next-payment-title" data-i18n="next_payment_title">Prochain versement</strong>
                         <span class="subtitle">15 août · Mobile Money</span>
                     </div>
                 </div>
                 <button class="btn-secondary btn-sm">
                     <span class="material-symbols-rounded">download</span>
-                    Exporter
+                    <span data-i18n="btn_export">Exporter</span>
                 </button>
             </div>
 
             <!-- Graphique d'évolution des encaissements -->
             <div class="card chart-card">
                 <div class="card-header chart-card-header">
-                    <h3>Évolution des encaissements</h3>
-                    <span class="subtitle">Derniers mois (en FCFA)</span>
+                    <h3 data-i18n="chart_title">Évolution des encaissements</h3>
+                    <span class="subtitle" data-i18n="chart_subtitle">Derniers mois (en FCFA)</span>
                 </div>
                 <div class="chart-container">
                     <!-- Mois 1 : Juin -->
@@ -195,25 +195,25 @@
 
             <!-- Filtres unifiés compatibles avec script.js -->
             <div class="filter-row">
-                <button class="filter-chip active" data-filter="all">Toutes</button>
-                <button class="filter-chip" data-filter="paid">Payées</button>
-                <button class="filter-chip" data-filter="pending">En attente</button>
-                <button class="filter-chip" data-filter="delay">En retard</button>
+                <button class="filter-chip active" data-filter="all" data-i18n="filter_all">Toutes</button>
+                <button class="filter-chip" data-filter="paid" data-i18n="filter_paid">Payées</button>
+                <button class="filter-chip" data-filter="pending" data-i18n="filter_pending">En attente</button>
+                <button class="filter-chip" data-filter="delay" data-i18n="filter_late">En retard</button>
             </div>
 
             <!-- Transactions récentes -->
             <div class="card">
                 <div class="card-header">
-                    <h3>Transactions récentes</h3>
+                    <h3 data-i18n="recent_transactions">Transactions récentes</h3>
                 </div>
                 <div class="table-responsive">
                     <table class="data-table">
                         <thead>
                             <tr>
-                                <th>Locataire</th>
-                                <th>Bien / Résidence</th>
-                                <th>Montant</th>
-                                <th>Statut</th>
+                                <th data-i18n="th_tenant">Locataire</th>
+                                <th data-i18n="th_property">Bien / Résidence</th>
+                                <th data-i18n="th_amount">Montant</th>
+                                <th data-i18n="th_status">Statut</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -226,7 +226,7 @@
                                 </td>
                                 <td>Résidence Koumassi · Apt 4B</td>
                                 <td>150 000 FCFA</td>
-                                <td><span class="status-badge paid">Payé</span></td>
+                                <td><span class="status-badge paid" data-i18n="status_paid">Payé</span></td>
                             </tr>
                             <tr data-status="pending">
                                 <td>
@@ -237,7 +237,7 @@
                                 </td>
                                 <td>Résidence Cocody · Studio 2</td>
                                 <td>95 000 FCFA</td>
-                                <td><span class="status-badge pending">En attente</span></td>
+                                <td><span class="status-badge pending" data-i18n="status_pending">En attente</span></td>
                             </tr>
                             <tr data-status="delay">
                                 <td>
@@ -248,7 +248,7 @@
                                 </td>
                                 <td>Résidence Koumassi · Apt 1A</td>
                                 <td>150 000 FCFA</td>
-                                <td><span class="status-badge status-badge-danger">En retard</span></td>
+                                <td><span class="status-badge status-badge-danger" data-i18n="status_late">En retard</span></td>
                             </tr>
                             <tr data-status="paid">
                                 <td>
@@ -259,7 +259,7 @@
                                 </td>
                                 <td>Résidence Marcory · Apt 3C</td>
                                 <td>180 000 FCFA</td>
-                                <td><span class="status-badge paid">Payé</span></td>
+                                <td><span class="status-badge paid" data-i18n="status_paid">Payé</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -268,7 +268,7 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
     <script src="translation.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

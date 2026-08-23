@@ -29,7 +29,7 @@
                 
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Propriétaire</span>
+                    <span class="profession" data-i18n="profession_owner">Espace Propriétaire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -39,49 +39,49 @@
             <div class="sidebar-content">
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
-                    <input type="search" placeholder="Rechercher..." required>
+                    <input type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher..." required>
                 </form>
 
                 <ul class="menu-list">
                     <li class="menu-item">
                         <a href="index.html" class="menu-link">
                             <span class="material-symbols-rounded">home</span>
-                            <span class="menu-label">Accueil</span>
+                            <span class="menu-label" data-i18n="nav_home">Accueil</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="biens.html" class="menu-link">
                             <span class="material-symbols-rounded">apartment</span>
-                            <span class="menu-label">Biens</span>
+                            <span class="menu-label" data-i18n="nav_properties">Biens</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="locataires.html" class="menu-link">
                             <span class="material-symbols-rounded">group</span>
-                            <span class="menu-label">Locataires</span>
+                            <span class="menu-label" data-i18n="nav_tenants">Locataires</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="finances.html" class="menu-link">
                             <span class="material-symbols-rounded">payments</span>
-                            <span class="menu-label">Finances</span>
+                            <span class="menu-label" data-i18n="nav_finances">Finances</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="notifications.html" class="menu-link active">
                             <span class="material-symbols-rounded">notifications</span>
-                            <span class="menu-label">Notifications</span>
+                            <span class="menu-label" data-i18n="nav_notifications">Notifications</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="parametres.html" class="menu-link">
                             <span class="material-symbols-rounded">settings</span>
-                            <span class="menu-label">Paramètres</span>
+                            <span class="menu-label" data-i18n="nav_settings">Paramètres</span>
                         </a>
                     </li>
                 </ul>
@@ -91,7 +91,7 @@
                 <li class="menu-item">
                     <a href="deconnexion.html" class="menu-link">
                         <span class="material-symbols-rounded">logout</span>
-                        <span class="menu-label">Déconnexion</span>
+                        <span class="menu-label" data-i18n="nav_logout">Déconnexion</span>
                     </a>
                 </li>
             </div>
@@ -102,8 +102,8 @@
             <!-- Header Section -->
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Notifications</h1>
-                    <p class="subtitle">Centre de rappels, alertes et messages importants</p>
+                    <h1 class="page-title" data-i18n="page_title_notifications">Notifications</h1>
+                    <p class="subtitle" data-i18n="subtitle_notifications">Centre de rappels, alertes et messages importants</p>
                 </div>
                 <div class="user-profile-badge">
                     <div class="user-avatar">IO</div>
@@ -112,10 +112,10 @@
 
             <!-- Filtres de notifications -->
             <div class="filter-row">
-                <button class="filter-chip active" data-filter="all">Toutes</button>
-                <button class="filter-chip" data-filter="unread">Non lues</button>
-                <button class="filter-chip" data-filter="payment">Paiements</button>
-                <button class="filter-chip" data-filter="info">Information</button>
+                <button class="filter-chip active" data-filter="all" data-i18n="filter_all_notif">Toutes</button>
+                <button class="filter-chip" data-filter="unread" data-i18n="filter_unread">Non lues</button>
+                <button class="filter-chip" data-filter="payment" data-i18n="filter_payment">Paiements</button>
+                <button class="filter-chip" data-filter="info" data-i18n="filter_info">Information</button>
             </div>
 
             <!-- Liste des Notifications -->
@@ -133,8 +133,8 @@
                         </div>
                         <p class="notification-body">Le locataire de l'Appartement 3B (Résidence Les Palmiers) a réglé son loyer de 295 000 FCFA avec succès.</p>
                         <div class="notification-actions">
-                            <a href="finances.html" class="btn-primary btn-sm">Voir les finances</a>
-                            <button class="btn-secondary btn-sm mark-read-btn">Marquer comme lue</button>
+                            <a href="finances.html" class="btn-primary btn-sm" data-i18n="btn_view_finances">Voir les finances</a>
+                            <button class="btn-secondary btn-sm mark-read-btn" data-i18n="btn_mark_read">Marquer comme lue</button>
                         </div>
                     </div>
                 </div>
@@ -151,8 +151,8 @@
                         </div>
                         <p class="notification-body">L'échéance de loyer pour le Studio 12 (Immeuble Tropicana) est dépassée. Un rappel automatique a été envoyé au locataire.</p>
                         <div class="notification-actions">
-                            <a href="biens.html" class="btn-secondary btn-sm">Gérer le bien</a>
-                            <button class="btn-secondary btn-sm mark-read-btn">Marquer comme lue</button>
+                            <a href="biens.html" class="btn-secondary btn-sm" data-i18n="btn_manage_property">Gérer le bien</a>
+                            <button class="btn-secondary btn-sm mark-read-btn" data-i18n="btn_mark_read">Marquer comme lue</button>
                         </div>
                     </div>
                 </div>
@@ -189,7 +189,7 @@
         </main>
     </div>
 
-    <script src="script.js"></script>
     <script src="translation.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

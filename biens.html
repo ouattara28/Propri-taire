@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+git<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@
                 </div>
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Propriétaire</span>
+                    <span class="profession" data-i18n="profession_owner">Espace Propriétaire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -35,68 +35,68 @@
             <div class="sidebar-content">
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
-                    <input type="search" placeholder="Rechercher..." required>
+                    <input type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher..." required>
                 </form>
 
                 <ul class="menu-list">
                     <li class="menu-item">
                         <a href="index.html" class="menu-link">
                             <span class="material-symbols-rounded">home</span>
-                            <span class="menu-label">Accueil</span>
+                            <span class="menu-label" data-i18n="nav_home">Accueil</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="biens.html" class="menu-link active">
                             <span class="material-symbols-rounded">apartment</span>
-                            <span class="menu-label">Biens</span>
+                            <span class="menu-label" data-i18n="nav_properties">Biens</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="locataires.html" class="menu-link">
                             <span class="material-symbols-rounded">group</span>
-                            <span class="menu-label">Locataires</span>
+                            <span class="menu-label" data-i18n="nav_tenants">Locataires</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="finances.html" class="menu-link">
                             <span class="material-symbols-rounded">account_balance</span>
-                            <span class="menu-label">Finances</span>
+                            <span class="menu-label" data-i18n="nav_finances">Finances</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="notifications.html" class="menu-link">
                             <span class="material-symbols-rounded">notifications</span>
-                            <span class="menu-label">Notifications</span>
+                            <span class="menu-label" data-i18n="nav_notifications">Notifications</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="parametres.html" class="menu-link">
                             <span class="material-symbols-rounded">settings</span>
-                            <span class="menu-label">Paramètres</span>
+                            <span class="menu-label" data-i18n="nav_settings">Paramètres</span>
                         </a>
                     </li>
                 </ul>
             </div>
 
             <div class="bottom-content">
-                <li class="menu-item"><a href="deconnexion.html" class="menu-link"><span class="material-symbols-rounded">logout</span><span class="menu-label">Déconnexion</span></a></li>
+                <li class="menu-item"><a href="deconnexion.html" class="menu-link"><span class="material-symbols-rounded">logout</span><span class="menu-label" data-i18n="nav_logout">Déconnexion</span></a></li>
             </div>
         </aside>
 
         <main class="main-content">
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Mes biens</h1>
-                    <p class="subtitle">Portefeuille · 3 résidences</p>
+                    <h1 class="page-title" data-i18n="page_title_properties">Mes biens</h1>
+                    <p class="subtitle" data-i18n="portfolio_subtitle">Portefeuille · 3 résidences</p>
                 </div>
                 <button class="btn-primary">
                     <span class="material-symbols-rounded">add</span>
-                    Ajouter un bien
+                    <span data-i18n="btn_add_property">Ajouter un bien</span>
                 </button>
             </header>
 
@@ -106,8 +106,8 @@
                         <span class="material-symbols-rounded">domain</span>
                     </div>
                     <div class="stat-details">
-                        <span class="stat-title">Total résidences</span>
-                        <span class="stat-value">3 <small>unités</small></span>
+                        <span class="stat-title" data-i18n="stat_total_residences">Total résidences</span>
+                        <span class="stat-value">3 <small data-i18n="unit_word">unités</small></span>
                     </div>
                 </div>
                 <div class="card stat-card">
@@ -115,8 +115,8 @@
                         <span class="material-symbols-rounded">home_work</span>
                     </div>
                     <div class="stat-details">
-                        <span class="stat-title">Total unités louées</span>
-                        <span class="stat-value">20 <small>unités</small></span>
+                        <span class="stat-title" data-i18n="stat_total_rented_units">Total unités louées</span>
+                        <span class="stat-value">20 <small data-i18n="unit_word">unités</small></span>
                     </div>
                 </div>
             </div>
@@ -130,7 +130,7 @@
                         <p class="subtitle" style="margin: 0;">8/8 unités louées</p>
                     </div>
                     <div style="text-align: right;">
-                        <span style="font-size: 0.8rem; color: var(--color-text-placeholder); display: block;">Encaissé</span>
+                        <span style="font-size: 0.8rem; color: var(--color-text-placeholder); display: block;" data-i18n="label_collected">Encaissé</span>
                         <strong style="font-size: 1.1rem; color: var(--color-text-primary);">1 020 000 FCFA</strong>
                     </div>
                 </div>
@@ -142,7 +142,7 @@
                         <p class="subtitle" style="margin: 0;">5/6 unités louées</p>
                     </div>
                     <div style="text-align: right;">
-                        <span style="font-size: 0.8rem; color: var(--color-text-placeholder); display: block;">Encaissé</span>
+                        <span style="font-size: 0.8rem; color: var(--color-text-placeholder); display: block;" data-i18n="label_collected">Encaissé</span>
                         <strong style="font-size: 1.1rem; color: var(--color-text-primary);">620 000 FCFA</strong>
                     </div>
                 </div>
@@ -154,14 +154,14 @@
                         <p class="subtitle" style="margin: 0;">6/6 unités louées</p>
                     </div>
                     <div style="text-align: right;">
-                        <span style="font-size: 0.8rem; color: var(--color-text-placeholder); display: block;">Encaissé</span>
+                        <span style="font-size: 0.8rem; color: var(--color-text-placeholder); display: block;" data-i18n="label_collected">Encaissé</span>
                         <strong style="font-size: 1.1rem; color: var(--color-text-primary);">500 000 FCFA</strong>
                     </div>
                 </div>
             </div>
         </main>
     </div>
-    <script src="script.js"></script>
     <script src="translation.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

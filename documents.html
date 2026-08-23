@@ -28,7 +28,7 @@
                 
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Locataire</span>
+                    <span class="profession" data-i18n="profession_tenant">Espace Locataire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -38,47 +38,47 @@
             <div class="sidebar-content">
                 <button class="theme-toggle theme-toggle-row" type="button">
                     <span class="material-symbols-rounded">dark_mode</span>
-                    <span class="menu-label">Mode sombre</span>
+                    <span class="menu-label" data-i18n="theme_toggle_label">Mode sombre</span>
                 </button>
 
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
-                    <input type="search" placeholder="Rechercher..." required>
+                    <input type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher..." required>
                 </form>
 
                 <ul class="menu-list">
                     <li class="menu-item">
                         <a href="index.html" class="menu-link">
                             <span class="material-symbols-rounded">home</span>
-                            <span class="menu-label">Accueil</span>
+                            <span class="menu-label" data-i18n="nav_home">Accueil</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="paiements.html" class="menu-link">
                             <span class="material-symbols-rounded">payments</span>
-                            <span class="menu-label">Paiements</span>
+                            <span class="menu-label" data-i18n="nav_payments">Paiements</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="documents.html" class="menu-link active">
                             <span class="material-symbols-rounded">description</span>
-                            <span class="menu-label">Documents</span>
+                            <span class="menu-label" data-i18n="nav_documents">Documents</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="notifications.html" class="menu-link">
                             <span class="material-symbols-rounded">notifications</span>
-                            <span class="menu-label">Notifications</span>
+                            <span class="menu-label" data-i18n="nav_notifications">Notifications</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="parametres.html" class="menu-link">
                             <span class="material-symbols-rounded">settings</span>
-                            <span class="menu-label">Paramètres</span>
+                            <span class="menu-label" data-i18n="nav_settings">Paramètres</span>
                         </a>
                     </li>
                 </ul>
@@ -88,7 +88,7 @@
                 <li class="menu-item">
                     <a href="deconnexion.html" class="menu-link">
                         <span class="material-symbols-rounded">logout</span>
-                        <span class="menu-label">Déconnexion</span>
+                        <span class="menu-label" data-i18n="nav_logout">Déconnexion</span>
                     </a>
                 </li>
             </div>
@@ -99,8 +99,8 @@
             <!-- Header Section -->
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Documents</h1>
-                    <p class="subtitle">Votre bail, reçus et attestations, toujours accessibles</p>
+                    <h1 class="page-title" data-i18n="page_title_documents">Documents</h1>
+                    <p class="subtitle" data-i18n="subtitle_documents">Votre bail, reçus et attestations, toujours accessibles</p>
                 </div>
                 <div class="user-profile-badge">
                     <div class="user-avatar">--</div>
@@ -109,15 +109,15 @@
 
             <!-- Filtres -->
             <div class="filter-row">
-                <button class="filter-chip active" data-filter="all">Tous</button>
-                <button class="filter-chip" data-filter="bail">Bail</button>
-                <button class="filter-chip" data-filter="recu">Reçus</button>
-                <button class="filter-chip" data-filter="attestation">Attestations</button>
+                <button class="filter-chip active" data-filter="all" data-i18n="filter_all_docs">Tous</button>
+                <button class="filter-chip" data-filter="bail" data-i18n="filter_bail">Bail</button>
+                <button class="filter-chip" data-filter="recu" data-i18n="filter_recu">Reçus</button>
+                <button class="filter-chip" data-filter="attestation" data-i18n="filter_attestation">Attestations</button>
             </div>
 
             <!-- Section Bail -->
             <div class="document-section" data-section-type="bail">
-                <h2 class="section-header-title">Contrat de bail</h2>
+                <h2 class="section-header-title" data-i18n="section_bail_title">Contrat de bail</h2>
                 <div class="card mb-large">
                     <ul class="doc-list">
                         <li class="doc-item">
@@ -146,7 +146,7 @@
 
             <!-- Section Reçus -->
             <div class="document-section" data-section-type="recu">
-                <h2 class="section-header-title">Reçus de paiement</h2>
+                <h2 class="section-header-title" data-i18n="section_recu_title">Reçus de paiement</h2>
                 <div class="card mb-large">
                     <ul class="doc-list">
                         <li class="doc-item">
@@ -191,7 +191,7 @@
 
             <!-- Section Attestations -->
             <div class="document-section" data-section-type="attestation">
-                <h2 class="section-header-title">Attestations</h2>
+                <h2 class="section-header-title" data-i18n="section_attestation_title">Attestations</h2>
                 <div class="card">
                     <ul class="doc-list">
                         <li class="doc-item">
@@ -221,6 +221,7 @@
     <script src="scroll-reveal.js"></script>
     <script src="recherche-globale.js"></script>
     <script src="interactions.js"></script>
+    <script src="translation.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

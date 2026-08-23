@@ -26,7 +26,7 @@
                 </div>
                 <div class="text header-text">
                     <span class="name">CitéPay</span>
-                    <span class="profession">Espace Propriétaire</span>
+                    <span class="profession" data-i18n="profession_owner">Espace Propriétaire</span>
                 </div>
                 <button class="sidebar-toggle" aria-expanded="true">
                     <span class="material-symbols-rounded">chevron_left</span>
@@ -36,56 +36,56 @@
             <div class="sidebar-content">
                 <form action="#" class="search-form" onsubmit="event.preventDefault();">
                     <span class="material-symbols-rounded">search</span>
-                    <input type="search" placeholder="Rechercher..." required>
+                    <input type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher..." required>
                 </form>
 
                 <ul class="menu-list">
                     <li class="menu-item">
                         <a href="index.html" class="menu-link">
                             <span class="material-symbols-rounded">home</span>
-                            <span class="menu-label">Accueil</span>
+                            <span class="menu-label" data-i18n="nav_home">Accueil</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="biens.html" class="menu-link">
                             <span class="material-symbols-rounded">apartment</span>
-                            <span class="menu-label">Biens</span>
+                            <span class="menu-label" data-i18n="nav_properties">Biens</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="locataires.html" class="menu-link">
                             <span class="material-symbols-rounded">group</span>
-                            <span class="menu-label">Locataires</span>
+                            <span class="menu-label" data-i18n="nav_tenants">Locataires</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="finances.html" class="menu-link">
                             <span class="material-symbols-rounded">account_balance</span>
-                            <span class="menu-label">Finances</span>
+                            <span class="menu-label" data-i18n="nav_finances">Finances</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="notifications.html" class="menu-link">
                             <span class="material-symbols-rounded">notifications</span>
-                            <span class="menu-label">Notifications</span>
+                            <span class="menu-label" data-i18n="nav_notifications">Notifications</span>
                         </a>
                     </li>
 
                     <li class="menu-item">
                         <a href="parametres.html" class="menu-link active">
                             <span class="material-symbols-rounded">settings</span>
-                            <span class="menu-label">Paramètres</span>
+                            <span class="menu-label" data-i18n="nav_settings">Paramètres</span>
                         </a>
                     </li>
                 </ul>
             </div>
 
             <div class="bottom-content">
-                <li class="menu-item"><a href="deconnexion.html" class="menu-link"><span class="material-symbols-rounded">logout</span><span class="menu-label">Déconnexion</span></a></li>
+                <li class="menu-item"><a href="deconnexion.html" class="menu-link"><span class="material-symbols-rounded">logout</span><span class="menu-label" data-i18n="nav_logout">Déconnexion</span></a></li>
             </div>
         </aside>
 
@@ -93,8 +93,8 @@
         <main class="main-content">
             <header class="dashboard-header">
                 <div>
-                    <h1 class="page-title">Paramètres du compte</h1>
-                    <p class="subtitle">Gérez vos informations, vos critères de versement et la sécurité</p>
+                    <h1 class="page-title" data-i18n="page_title_settings">Paramètres du compte</h1>
+                    <p class="subtitle" data-i18n="subtitle_settings">Gérez vos informations, vos critères de versement et la sécurité</p>
                 </div>
                 <div class="user-profile-badge">
                     <div class="user-avatar">IO</div>
@@ -103,11 +103,11 @@
 
             <!-- Navigation Chips / Filtres dynamiques (Gérés par script.js) -->
             <div class="filter-row">
-                <button class="filter-chip active" data-filter="all">Tous les réglages</button>
-                <button class="filter-chip" data-filter="profile">Profil & Activité</button>
-                <button class="filter-chip" data-filter="payments">Versements</button>
-                <button class="filter-chip" data-filter="language">Langue & Région</button>
-                <button class="filter-chip" data-filter="security">Sécurité</button>
+                <button class="filter-chip active" data-filter="all" data-i18n="filter_all_settings">Tous les réglages</button>
+                <button class="filter-chip" data-filter="profile" data-i18n="filter_profile">Profil & Activité</button>
+                <button class="filter-chip" data-filter="payments" data-i18n="filter_payments_settings">Versements</button>
+                <button class="filter-chip" data-filter="language" data-i18n="filter_language">Langue & Région</button>
+                <button class="filter-chip" data-filter="security" data-i18n="filter_security">Sécurité</button>
             </div>
 
             <!-- CONTENEUR DES SECTIONS DE RÉGLAGES -->
@@ -118,7 +118,7 @@
                     <div class="card-header" style="border-bottom: 1px solid var(--color-border-hr); padding-bottom: 12px; margin-bottom: 20px;">
                         <h3 style="display: flex; align-items: center; gap: 10px;">
                             <span class="material-symbols-rounded" style="color: var(--primary);">person</span>
-                            Profil & Informations Propriétaire
+                            <span data-i18n="section_profile_title">Profil & Informations Propriétaire</span>
                         </h3>
                     </div>
 
@@ -126,43 +126,43 @@
                     <div style="display: flex; align-items: center; gap: 20px; margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px dashed var(--color-border-hr);">
                         <div class="user-avatar" style="width: 72px; height: 72px; font-size: 1.5rem; flex-shrink: 0;">IO</div>
                         <div style="display: flex; flex-direction: column; gap: 8px;">
-                            <label style="font-weight: 600; font-size: 0.9rem;">Photo de profil</label>
+                            <label style="font-weight: 600; font-size: 0.9rem;" data-i18n="profile_photo_label">Photo de profil</label>
                             <div style="display: flex; gap: 10px; flex-wrap: wrap;">
                                 <label class="btn-primary btn-sm" style="cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
                                     <span class="material-symbols-rounded" style="font-size: 1.1rem;">upload</span>
-                                    Changer la photo
+                                    <span data-i18n="btn_change_photo">Changer la photo</span>
                                     <input type="file" accept="image/*" style="display: none;">
                                 </label>
-                                <button type="button" class="btn-secondary btn-sm" style="color: var(--danger); border-color: rgba(239, 68, 68, 0.3);">Supprimer</button>
+                                <button type="button" class="btn-secondary btn-sm" style="color: var(--danger); border-color: rgba(239, 68, 68, 0.3);" data-i18n="btn_delete">Supprimer</button>
                             </div>
-                            <span style="font-size: 0.8rem; color: var(--color-text-placeholder);">Format JPG, PNG ou WEBP. Max 5 Mo.</span>
+                            <span style="font-size: 0.8rem; color: var(--color-text-placeholder);" data-i18n="photo_format_hint">Format JPG, PNG ou WEBP. Max 5 Mo.</span>
                         </div>
                     </div>
 
                     <form onsubmit="event.preventDefault();">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 20px;">
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Nom complet</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_fullname">Nom complet</label>
                                 <input type="text" value="Ismaël Ouattara" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem; color: var(--color-text-primary);">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Numéro de téléphone</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_phone">Numéro de téléphone</label>
                                 <input type="tel" value="+225 07 00 00 00 00" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem; color: var(--color-text-primary);">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Adresse Email</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_email">Adresse Email</label>
                                 <input type="email" value="ismael.ouattara@example.com" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem; color: var(--color-text-primary);">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Localisation / Ville</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_location">Localisation / Ville</label>
                                 <input type="text" value="Abidjan, Côte d'Ivoire" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem; color: var(--color-text-primary);">
                             </div>
                             <div style="grid-column: 1 / -1;">
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Portefeuille immobilier (Lecture seule)</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_portfolio_readonly">Portefeuille immobilier (Lecture seule)</label>
                                 <input type="text" value="3 Résidences gérées — 9 Lots actifs" disabled style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-secondary); color: var(--color-text-placeholder); font-size: 0.9rem;">
                             </div>
                         </div>
-                        <button class="btn-primary btn-sm">Enregistrer les modifications</button>
+                        <button class="btn-primary btn-sm" data-i18n="btn_save_changes">Enregistrer les modifications</button>
                     </form>
                 </section>
 
@@ -171,11 +171,11 @@
                     <div class="card-header" style="border-bottom: 1px solid var(--color-border-hr); padding-bottom: 12px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center;">
                         <h3 style="display: flex; align-items: center; gap: 10px;">
                             <span class="material-symbols-rounded" style="color: var(--primary);">payments</span>
-                            Comptes de versement des loyers
+                            <span data-i18n="section_payments_title">Comptes de versement des loyers</span>
                         </h3>
                         <button class="btn-primary btn-sm" style="display: inline-flex; align-items: center; gap: 4px;">
                             <span class="material-symbols-rounded" style="font-size: 1rem;">add</span>
-                            Ajouter un compte
+                            <span data-i18n="btn_add_account">Ajouter un compte</span>
                         </button>
                     </div>
 
@@ -189,7 +189,7 @@
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <span class="status-badge paid">Par défaut</span>
+                                <span class="status-badge paid" data-i18n="default_badge">Par défaut</span>
                                 <button class="btn-icon" style="background: none; border: none; cursor: pointer; color: var(--danger);"><span class="material-symbols-rounded">delete</span></button>
                             </div>
                         </div>
@@ -203,7 +203,7 @@
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 10px;">
-                                <button class="btn-secondary btn-sm">Définir par défaut</button>
+                                <button class="btn-secondary btn-sm" data-i18n="btn_set_default">Définir par défaut</button>
                                 <button class="btn-icon" style="background: none; border: none; cursor: pointer; color: var(--danger);"><span class="material-symbols-rounded">delete</span></button>
                             </div>
                         </div>
@@ -215,22 +215,21 @@
                     <div class="card-header" style="border-bottom: 1px solid var(--color-border-hr); padding-bottom: 12px; margin-bottom: 20px;">
                         <h3 style="display: flex; align-items: center; gap: 10px;">
                             <span class="material-symbols-rounded" style="color: var(--primary);">language</span>
-                            Langue & Région
+                            <span data-i18n="settings_lang_title">Langue & Région</span>
                         </h3>
                     </div>
 
-                    <form onsubmit="event.preventDefault();" style="display: flex; flex-direction: column; gap: 16px;">
+                    <form id="languageForm" style="display: flex; flex-direction: column; gap: 16px;">
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Langue de l'interface</label>
-                                <select style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem; color: var(--color-text-primary);">
-                                    <option value="fr" selected>Français (FR)</option>
+                                <label for="languageSelect" style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="settings_lang_label">Langue de l'interface</label>
+                                <select id="languageSelect" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem; color: var(--color-text-primary);">
+                                    <option value="fr">Français (FR)</option>
                                     <option value="en">English (US)</option>
-                                    <option value="es">Español (ES)</option>
                                 </select>
                             </div>
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Fuseau horaire</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_timezone">Fuseau horaire</label>
                                 <select style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem; color: var(--color-text-primary);">
                                     <option value="GMT">GMT (Abidjan, Dakar)</option>
                                     <option value="CET">CET (Paris, Bruxelles)</option>
@@ -239,7 +238,7 @@
                             </div>
                         </div>
                         <div>
-                            <button class="btn-primary btn-sm">Appliquer les préférences</button>
+                            <button class="btn-primary btn-sm" data-i18n="btn_apply_preferences">Appliquer les préférences</button>
                         </div>
                     </form>
                 </section>
@@ -249,24 +248,24 @@
                     <div class="card-header" style="border-bottom: 1px solid var(--color-border-hr); padding-bottom: 12px; margin-bottom: 20px;">
                         <h3 style="display: flex; align-items: center; gap: 10px;">
                             <span class="material-symbols-rounded" style="color: var(--primary);">lock</span>
-                            Sécurité & Connexion
+                            <span data-i18n="section_security_title">Sécurité & Connexion</span>
                         </h3>
                     </div>
 
                     <form onsubmit="event.preventDefault();" style="display: flex; flex-direction: column; gap: 16px;">
-                        <h4 style="font-size: 0.95rem; color: var(--color-text-primary);">Modifier le mot de passe</h4>
+                        <h4 style="font-size: 0.95rem; color: var(--color-text-primary);" data-i18n="change_password_title">Modifier le mot de passe</h4>
                         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px;">
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Mot de passe actuel</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_current_password">Mot de passe actuel</label>
                                 <input type="password" placeholder="••••••••" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem;">
                             </div>
                             <div>
-                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;">Nouveau mot de passe</label>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 6px;" data-i18n="label_new_password">Nouveau mot de passe</label>
                                 <input type="password" placeholder="••••••••" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--color-border-hr); background: var(--color-bg-primary); font-size: 0.9rem;">
                             </div>
                         </div>
                         <div>
-                            <button class="btn-secondary btn-sm">Mettre à jour le mot de passe</button>
+                            <button class="btn-secondary btn-sm" data-i18n="btn_update_password">Mettre à jour le mot de passe</button>
                         </div>
                     </form>
                 </section>
@@ -276,7 +275,7 @@
     </div>
 
     <!-- Script JavaScript global pour la gestion des filtres et interactions -->
-    <script src="script.js"></script>
     <script src="translation.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
