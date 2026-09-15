@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Ouattara Ismael Ali</title>
+    <meta name="description" content="Contactez Ouattara Ismael Ali pour un stage, une mission ou une collaboration.">
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<button type="button" class="nav-toggle" aria-controls="navigation" aria-expanded="false">Menu</button>
+<nav id="navigation">
+    <a href="index.html">Accueil</a>
+    <a href="formation.html">Formation</a>
+    <a href="competence.html">Compétences</a>
+    <a href="projet-professionnel.html">Projets</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main id="contenu">
+    <h2 class="page-title">CONTACT</h2>
+
+    <div class="monblock">
+        <p>
+            Disponible pour un stage, une mission ou une collaboration.
+            N'hésitez pas à me contacter 👇
+        </p>
+        <ul class="contact-list">
+            <li>📞 <a href="tel:+2250576956529">+225 05 76 95 65 29</a></li>
+            <li>✉️ <a href="mailto:ouattaraismael20144@gmail.com?subject=Projet&body=Bonjour, j'aimerais discuter d'un projet avec vous">
+                ouattaraismael20144@gmail.com
+            </a></li>
+            <li>💼 <a href="https://github.com/ouattara28" target="_blank" rel="noopener noreferrer">github.com/ouattara28</a></li>
+        </ul>
+    </div>
+
+    <form id="contact-form" class="monblock" action="https://formspree.io/f/REMPLACER_PAR_VOTRE_ID" method="POST" aria-describedby="form-status">
+        <label for="name">Votre nom</label>
+        <input id="name" name="name" type="text" placeholder="Votre nom" required autocomplete="name">
+
+        <label for="email">Votre email</label>
+        <input id="email" name="email" type="email" placeholder="Votre email" required autocomplete="email">
+
+        <label for="message">Votre message</label>
+        <textarea id="message" name="message" placeholder="Votre message" required></textarea>
+
+        <!-- Honeypot anti-spam (champ invisible, ne pas afficher) -->
+        <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+
+        <button type="submit">Envoyer</button>
+    </form>
+    <p id="form-status" class="form-status" role="status"></p>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <p><strong>Ouattara Ismael Ali</strong></p>
+            <p>Étudiant en Licence 3 de Génie Logiciel</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="formation.html">Formation</a>
+            <a href="competence.html">Compétences</a>
+            <a href="projet-professionnel.html">Projets</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-meta">
+            <p>&copy; <span id="year"></span> | Tous droits réservés</p>
+            <p><a href="mailto:ouattaraismael20144@gmail.com">ouattaraismael20144@gmail.com</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

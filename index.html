@@ -3,243 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CitéPay — Espace Propriétaire</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
-    <link rel="stylesheet" href="style.css">
+    <title>Ouattara Ismael Ali — Étudiant en Licence 3 de Génie Logiciel</title>
+    <meta name="description" content="Portfolio d'Ouattara Ismael Ali, étudiant en Licence 3 de Génie Logiciel basé à Abidjan.">
+    <link rel="stylesheet" href="design.css">
 </head>
 <body>
-    <!-- Mobile Top Navigation -->
-    <nav class="site-nav">
-        <button class="sidebar-toggle" aria-expanded="true">
-            <span class="material-symbols-rounded">menu</span>
-        </button>
-        <span class="site-nav-title">CitéPay</span>
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+    <button type="button" class="nav-toggle" aria-controls="navigation" aria-expanded="false">Menu</button>
+    <nav id="navigation">
+        <a href="index.html">Accueil</a>
+        <a href="formation.html">Formation</a>
+        <a href="competence.html">Compétences</a>
+        <a href="projet-professionnel.html">Projets</a>
+        <a href="contact.html">Contact</a>
     </nav>
-   
-    <div class="container">
-        <!-- Sidebar Navigation (Visible sur Desktop, Tablette et Mobile) -->
-        <aside class="sidebar">
-            <header class="sidebar-header">
-                <div class="header-logo-placeholder">
-                    <span class="material-symbols-rounded">apartment</span>
+
+    <main id="contenu">
+        <div class="cc">
+            <div>
+                <h1>HELLO!</h1>
+                <p id="moi"><strong>Je suis</strong>
+                    <span class="nom">Ouattara Ismael Ali</span>
+                </p>
+                <div class="block">
+                    <p id="mo">ÉTUDIANT EN LICENCE 3 DE GÉNIE LOGICIEL</p>
                 </div>
-                
-                <div class="text header-text">
-                    <span class="name">CitéPay</span>
-                    <span class="profession" data-i18n="profession_owner">Espace Propriétaire</span>
-                </div>
-                <button class="sidebar-toggle" aria-expanded="true">
-                    <span class="material-symbols-rounded">chevron_left</span>
-                </button>
-            </header>
-
-            <div class="sidebar-content">
-                <form action="#" class="search-form" onsubmit="event.preventDefault();">
-                    <span class="material-symbols-rounded">search</span>
-                    <input type="search" data-i18n-placeholder="search_placeholder" placeholder="Rechercher..." required>
-                </form>
-
-                <ul class="menu-list">
-                    <li class="menu-item">
-                        <a href="index.html" class="menu-link active">
-                            <span class="material-symbols-rounded">home</span>
-                            <span class="menu-label" data-i18n="nav_home">Accueil</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="biens.html" class="menu-link">
-                            <span class="material-symbols-rounded">apartment</span>
-                            <span class="menu-label" data-i18n="nav_properties">Biens</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="locataires.html" class="menu-link">
-                            <span class="material-symbols-rounded">group</span>
-                            <span class="menu-label" data-i18n="nav_tenants">Locataires</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="finances.html" class="menu-link">
-                            <span class="material-symbols-rounded">account_balance</span>
-                            <span class="menu-label" data-i18n="nav_finances">Finances</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="notifications.html" class="menu-link">
-                            <span class="material-symbols-rounded">notifications</span>
-                            <span class="menu-label" data-i18n="nav_notifications">Notifications</span>
-                        </a>
-                    </li>
-
-                    <li class="menu-item">
-                        <a href="parametres.html" class="menu-link">
-                            <span class="material-symbols-rounded">settings</span>
-                            <span class="menu-label" data-i18n="nav_settings">Paramètres</span>
-                        </a>
-                    </li>
-                </ul>
+                <br>
+                <span>Étudiant en Génie Logiciel, je conçois des interfaces web propres<br>et je m'intéresse de près au DevOps et à l'automatisation.</span><br><br>
+                <a href="cv/CV_Ismael_Ali_Ouattara.pdf" download="CV_Ismael_Ali_Ouattara.pdf" class="btn-download">
+                    <span aria-hidden="true">⬇</span> TÉLÉCHARGER MON CV
+                </a>
             </div>
-
-            <div class="bottom-content">
-                <li class="menu-item">
-                    <a href="deconnexion.html" class="menu-link">
-                        <span class="material-symbols-rounded">logout</span>
-                        <span class="menu-label" data-i18n="nav_logout">Déconnexion</span>
-                    </a>
-                </li>
+            <div class="avatar">
+                <img src="image/avatar.jpg" alt="Photo d'Ouattara Ismael Ali" width="200" height="200" loading="eager">
             </div>
-        </aside>
+        </div>
 
-        <!-- Main Dashboard Content -->
-        <main class="main-content">
-            <!-- Header Section -->
-            <header class="dashboard-header">
-                <div>
-                    <h1 class="page-title">Bonjour 👋, Ismaël Ouattara</h1>
-                    <p class="subtitle" data-i18n="portfolio_subtitle">Portefeuille · 3 résidences</p>
-                </div>
-                <div class="user-profile-badge">
-                    <div class="user-avatar">IO</div>
-                </div>
-            </header>
+        <div id="rs">
+            <a class="social-link" href="https://github.com/ouattara28" target="_blank" rel="noopener noreferrer" aria-label="Mon profil GitHub">
+                <img class="hg" src="image/gitthub.jpg" alt="GitHub" width="50" height="50" loading="lazy">
+            </a>
+            <a class="social-link" href="https://www.instagram.com/le_ismo225" target="_blank" rel="noopener noreferrer" aria-label="Mon profil Instagram">
+                <img class="hg" src="image/insta.jpg" alt="Instagram" width="50" height="50" loading="lazy">
+            </a>
+            <a class="social-link" href="https://www.tiktok.com/@ismaelouattara02" target="_blank" rel="noopener noreferrer" aria-label="Mon profil TikTok">
+                <img class="hg" src="image/tiktok.png" alt="TikTok" width="50" height="50" loading="lazy">
+            </a>
+        </div>
 
-            <!-- Stats Grid / Aperçu Financier -->
-            <div class="stats-grid">
-                <div class="card stat-card">
-                    <div class="stat-icon bg-success">
-                        <span class="material-symbols-rounded">payments</span>
-                    </div>
-                    <div class="stat-details">
-                        <span class="stat-title" data-i18n="stat_collected_month">Encaissé ce mois</span>
-                        <span class="stat-value">2,14M <small>FCFA</small></span>
-                        <span class="stat-title text-success" style="font-size: 0.75rem; margin-top: 2px;" data-i18n="stat_vs_last_month">+12% vs juil.</span>
-                    </div>
-                </div>
+        <h2><strong>MA VISION</strong></h2>
 
-                <div class="card stat-card">
-                    <div class="stat-icon bg-warning">
-                        <span class="material-symbols-rounded">hourglass_top</span>
-                    </div>
-                    <div class="stat-details">
-                        <span class="stat-title" data-i18n="stat_pending_rents">Loyers en attente</span>
-                        <span class="stat-value">340K <small>FCFA</small></span>
-                        <span class="stat-title" style="font-size: 0.75rem; margin-top: 2px;" data-i18n="stat_tenants_count_3">3 locataires</span>
-                    </div>
-                </div>
+        <div class="monblock">
+            <p>
+                Je suis quelqu'un qui a toujours des idées en tête. J'aime créer, imaginer des projets, réfléchir à ce que je pourrais construire plus tard. Même quand tout n'est pas encore clair, je continue d'y penser, parce que j'ai envie d'avancer et de comprendre comment transformer mes idées en quelque chose de réel.
+            </p>
+            <p>
+                Je ne fais pas les choses au hasard. Quand je me lance dans un projet, c'est parce qu'il a du sens pour moi. J'aime apprendre par moi-même, tester, me tromper parfois, mais surtout progresser. Ce qui m'intéresse, ce n'est pas juste le résultat, c'est le chemin pour y arriver.
+            </p>
+            <p>
+                Je suis curieux, motivé, et j'essaie toujours de devenir meilleur qu'hier. Parfois j'hésite, parfois je doute, mais je n'abandonne pas facilement. J'ai envie de construire quelque chose qui me ressemble, à mon rythme, avec mes idées.
+            </p>
+        </div>
 
-                <div class="card stat-card">
-                    <div class="stat-icon bg-accent">
-                        <span class="material-symbols-rounded">pie_chart</span>
-                    </div>
-                    <div class="stat-details">
-                        <span class="stat-title" data-i18n="stat_occupancy_rate">Taux d'occupation</span>
-                        <span class="stat-value">95% <small style="font-size: 0.8rem; font-weight: normal; color: var(--color-text-placeholder);" data-i18n="stat_units_18_20">18/20 unités</small></span>
-                    </div>
-                </div>
+        <h3>MES HOBBIES</h3>
+
+        <ul class="hobbies">
+            <li>💡 Imaginer des projets et réfléchir à des idées nouvelles</li>
+            <li>🧠 Réfléchir et apprendre par moi-même</li>
+            <li>🛠️ Créer / construire des choses (même encore en réflexion)</li>
+            <li>🔍 Comprendre comment les choses fonctionnent, pas juste les utiliser</li>
+            <li>✍️ Exprimer mes idées et les organiser</li>
+            <li>🚀 Me projeter dans l'avenir et penser à ce que je veux devenir</li>
+            <li>🎧 Explorer des ressources tech, podcasts et tutos pour progresser chaque semaine</li>
+        </ul>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p><strong>Ouattara Ismael Ali</strong></p>
+                <p>Étudiant en Licence 3 de Génie Logiciel</p>
             </div>
-
-            <!-- Hero Card / Action Rapide Principale -->
-            <div class="dashboard-grid grid-single">
-                <div class="card payment-hero-card" style="padding: 24px;">
-                    <div style="position: relative; z-index: 2; width: 100%;">
-                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                            <span class="badge-due" data-i18n="badge_bulk_action">Action groupée</span>
-                            <span class="material-symbols-rounded" style="color: #FBBF24;">campaign</span>
-                        </div>
-                        <h2 data-i18n="hero_title">Relancez vos paiements en un clic</h2>
-                        <p data-i18n="hero_text">Envoyez des rappels automatiques de loyer par SMS ou notification aux locataires en retard.</p>
-                        <button class="btn-primary" style="background: #ffffff; color: var(--color-text-primary);">
-                            <span class="material-symbols-rounded" style="color: var(--color-hover-primary);">send</span>
-                            <span data-i18n="btn_send_reminders">Envoyer les rappels de loyer</span>
-                        </button>
-                    </div>
-                </div>
+            <div class="footer-links">
+                <a href="index.html">Accueil</a>
+                <a href="formation.html">Formation</a>
+                <a href="competence.html">Compétences</a>
+                <a href="projet-professionnel.html">Projets</a>
+                <a href="contact.html">Contact</a>
             </div>
-
-            <!-- Quick Actions -->
-            <div class="card quick-actions-card mb-large">
-                <h3 data-i18n="quick_access_title">Accès rapide</h3>
-                <div class="quick-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                    <a href="locataires.html" class="quick-item">
-                        <span class="material-symbols-rounded quick-icon">group</span>
-                        <span data-i18n="quick_my_tenants">Mes Locataires</span>
-                        <small style="color: var(--color-text-placeholder); font-weight: normal;" data-i18n="quick_tenants_active">18 actifs</small>
-                    </a>
-                    <a href="biens.html" class="quick-item">
-                        <span class="material-symbols-rounded quick-icon">apartment</span>
-                        <span data-i18n="quick_leases">Baux</span>
-                        <small style="color: var(--color-text-placeholder); font-weight: normal;" data-i18n="quick_leases_renew">3 à renouveler</small>
-                    </a>
-                    <a href="parametres.html" class="quick-item">
-                        <span class="material-symbols-rounded quick-icon">build</span>
-                        <span data-i18n="quick_maintenance">Maintenance</span>
-                        <small style="color: var(--color-text-placeholder); font-weight: normal;" data-i18n="quick_maintenance_ongoing">2 en cours</small>
-                    </a>
-                    <a href="finances.html" class="quick-item">
-                        <span class="material-symbols-rounded quick-icon">receipt_long</span>
-                        <span data-i18n="quick_payments_label">Paiements</span>
-                        <small style="color: var(--color-text-placeholder); font-weight: normal;" data-i18n="quick_payments_history">Voir historique</small>
-                    </a>
-                </div>
+            <div class="footer-meta">
+                <p>&copy; <span id="year"></span> | Tous droits réservés</p>
+                <p><a href="mailto:ouattaraismael20144@gmail.com">ouattaraismael20144@gmail.com</a></p>
             </div>
+        </div>
+    </footer>
 
-            <!-- Recent Activity Table -->
-            <div class="content-grid grid-single">
-                <div class="card">
-                    <div class="card-header">
-                        <h3 data-i18n="recent_activity">Activité récente</h3>
-                        <a href="finances.html" class="link-more" data-i18n="see_all">Tout voir</a>
-                    </div>
-                    <div class="table-responsive">
-                        <table class="data-table">
-                            <thead>
-                                <tr>
-                                    <th data-i18n="th_tenant">Locataire</th>
-                                    <th data-i18n="th_property">Bien / Résidence</th>
-                                    <th data-i18n="th_amount">Montant</th>
-                                    <th data-i18n="th_status">Statut</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-bg-secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.8rem;">AK</div>
-                                            <strong>Aicha Koné</strong>
-                                        </div>
-                                    </td>
-                                    <td>Résidence Koumassi · Apt 4B</td>
-                                    <td>150 000 FCFA</td>
-                                    <td><span class="status-badge paid" data-i18n="status_paid">Payé</span></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <div style="display: flex; align-items: center; gap: 10px;">
-                                            <div style="width: 32px; height: 32px; border-radius: 50%; background: var(--color-bg-secondary); color: var(--primary); display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.8rem;">YB</div>
-                                            <strong>Yao Brou</strong>
-                                        </div>
-                                    </td>
-                                    <td>Résidence Cocody · Studio 2</td>
-                                    <td>95 000 FCFA</td>
-                                    <td><span class="status-badge pending" data-i18n="status_pending">En attente</span></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- Script JS Global -->
-    <script src="translation.js"></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

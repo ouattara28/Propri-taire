@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compétences — Ouattara Ismael Ali</title>
+    <meta name="description" content="Compétences techniques d'Ouattara Ismael Ali : HTML5, CSS3, JavaScript, SQL, Python.">
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+<button type="button" class="nav-toggle" aria-controls="navigation" aria-expanded="false">Menu</button>
+<nav id="navigation">
+    <a href="index.html">Accueil</a>
+    <a href="formation.html">Formation</a>
+    <a href="competence.html">Compétences</a>
+    <a href="projet-professionnel.html">Projets</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main id="contenu">
+    <h2 class="page-title">MES COMPÉTENCES</h2>
+
+    <div class="skill-filter" role="tablist" aria-label="Filtrer les compétences">
+        <button type="button" class="filter-btn active" data-filter="all">Tous</button>
+        <button type="button" class="filter-btn" data-filter="frontend">Front-end</button>
+        <button type="button" class="filter-btn" data-filter="backend">Back-end</button>
+        <button type="button" class="filter-btn" data-filter="tools">Outils</button>
+        <button type="button" class="filter-btn" data-filter="soft">Soft</button>
+    </div>
+
+    <div class="card-grid">
+        <div class="card skill-card" data-category="frontend">
+            <h4>HTML5 / CSS3</h4>
+            <p>Niveau avancé — mise en page responsive, animations CSS et design moderne.</p>
+            <div class="skill-bar">
+                <span>Maîtrise</span>
+                <div class="skill-progress" data-level="96">
+                    <span class="skill-progress-fill"></span>
+                    <strong class="skill-percent">96%</strong>
+                </div>
+            </div>
+            <div class="tags"><span>HTML5</span><span>CSS3</span><span>Responsive</span></div>
+        </div>
+        <div class="card skill-card" data-category="frontend">
+            <h4>JavaScript</h4>
+            <p>Niveau intermédiaire — DOM, événements, API fetch et comportements interactifs.</p>
+            <div class="skill-bar">
+                <span>Maîtrise</span>
+                <div class="skill-progress" data-level="84">
+                    <span class="skill-progress-fill"></span>
+                    <strong class="skill-percent">84%</strong>
+                </div>
+            </div>
+            <div class="tags"><span>DOM</span><span>Fetch API</span><span>ES6+</span></div>
+        </div>
+        <div class="card skill-card" data-category="backend">
+            <h4>SQL / Bases de données</h4>
+            <p>Niveau intermédiaire — modélisation, requêtes, jointures et optimisation.</p>
+            <div class="skill-bar">
+                <span>Maîtrise</span>
+                <div class="skill-progress" data-level="78">
+                    <span class="skill-progress-fill"></span>
+                    <strong class="skill-percent">78%</strong>
+                </div>
+            </div>
+            <div class="tags"><span>SQL</span><span>Modélisation</span></div>
+        </div>
+        <div class="card skill-card" data-category="backend">
+            <h4>Python</h4>
+            <p>En cours d'apprentissage — scripts automatisés, logique et bonnes pratiques.</p>
+            <div class="skill-bar">
+                <span>Maîtrise</span>
+                <div class="skill-progress" data-level="72">
+                    <span class="skill-progress-fill"></span>
+                    <strong class="skill-percent">72%</strong>
+                </div>
+            </div>
+            <div class="tags"><span>Python</span><span>Automatisation</span></div>
+        </div>
+        <div class="card skill-card" data-category="tools">
+            <h4>DevOps &amp; Outils</h4>
+            <p>Notions de CI/CD, Git et conteneurisation pour une approche plus professionnelle.</p>
+            <div class="skill-bar">
+                <span>Maîtrise</span>
+                <div class="skill-progress" data-level="70">
+                    <span class="skill-progress-fill"></span>
+                    <strong class="skill-percent">70%</strong>
+                </div>
+            </div>
+            <div class="tags"><span>Git</span><span>CI/CD</span><span>Docker</span></div>
+        </div>
+        <div class="card skill-card" data-category="soft">
+            <h4>Accessibilité</h4>
+            <p>Interfaces inclusives respectant les bonnes pratiques WCAG et l'expérience utilisateur.</p>
+            <div class="skill-bar">
+                <span>Maîtrise</span>
+                <div class="skill-progress" data-level="88">
+                    <span class="skill-progress-fill"></span>
+                    <strong class="skill-percent">88%</strong>
+                </div>
+            </div>
+            <div class="tags"><span>WCAG</span><span>UX</span></div>
+        </div>
+        <div class="card skill-card" data-category="soft">
+            <h4>Langues</h4>
+            <p>Français natif, anglais professionnel en cours de progression.</p>
+            <div class="skill-bar">
+                <span>Maîtrise</span>
+                <div class="skill-progress" data-level="82">
+                    <span class="skill-progress-fill"></span>
+                    <strong class="skill-percent">82%</strong>
+                </div>
+            </div>
+            <div class="tags"><span>Français</span><span>Anglais</span></div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <p><strong>Ouattara Ismael Ali</strong></p>
+            <p>Étudiant en Licence 3 de Génie Logiciel</p>
+        </div>
+        <div class="footer-links">
+            <a href="index.html">Accueil</a>
+            <a href="formation.html">Formation</a>
+            <a href="competence.html">Compétences</a>
+            <a href="projet-professionnel.html">Projets</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-meta">
+            <p>&copy; <span id="year"></span> | Tous droits réservés</p>
+            <p><a href="mailto:ouattaraismael20144@gmail.com">ouattaraismael20144@gmail.com</a></p>
+        </div>
+    </div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>
